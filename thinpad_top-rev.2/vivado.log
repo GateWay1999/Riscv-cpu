@@ -1,0 +1,411 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Dec  1 02:06:18 2018
+# Process ID: 7628
+# Current directory: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17876 C:\Users\blade\Desktop\Riscv-cpu\thinpad_top-rev.2\thinpad_top.xpr
+# Log file: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/vivado.log
+# Journal file: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 833.742 ; gain = 83.344
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Core.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Fetch.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Decode.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Execute.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/MEM.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/WB.v] -no_script -reset -force -quiet
+remove_files  {C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Core.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Fetch.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Decode.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Execute.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/MEM.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/WB.v}
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  {C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/RegFile.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/PC.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/MEM_WB.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Ins_Mem.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Imm_Gen.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/IF_ID.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ID_EX.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ALU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ALU_Control.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/CHFU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Compare.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Control.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Data_Mem.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/EX_MEM.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/FU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/HDU.v}]
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ALU.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ALU_Control.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/CHFU.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Compare.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Control.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Data_Mem.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/EX_MEM.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/FU.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/HDU.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ID_EX.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/IF_ID.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Imm_Gen.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Ins_Mem.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/MEM_WB.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/RegFile.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/PC.v] -no_script -reset -force -quiet
+remove_files  {C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ALU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ALU_Control.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/CHFU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Compare.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Control.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Data_Mem.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/EX_MEM.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/FU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/HDU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/ID_EX.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/IF_ID.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Imm_Gen.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/Ins_Mem.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/MEM_WB.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/RegFile.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/PC.v}
+export_ip_user_files -of_objects  [get_files C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/define.v] -no_script -reset -force -quiet
+remove_files  C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/imports/new/define.v
+add_files -norecurse {C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Fetch.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/EX_MEM.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/IF_ID.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/HDU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/CHFU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM_WB.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Compare.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/FU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/WB.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/PC.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Imm_Gen.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/define.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU_Control.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Decode.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Control.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ID_EX.v}
+update_compile_order -fileset sources_1
+set_property top Core [current_fileset]
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tfgg676-2L
+Top: Core
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 947.410 ; gain = 80.895
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Core' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Fetch' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Fetch.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/PC.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC' (1#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/PC.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Ins_Mem' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:23]
+INFO: [Synth 8-3876] $readmem data file 'D:/Vivado/RV32CPU/RiscV_CPU/RiscV_CPU.srcs/sources_1/new/inst_rom.data' is read successfully [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'Ins_Mem' (2#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'IF_ID' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/IF_ID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (3#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/IF_ID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Fetch' (4#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Fetch.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Decode' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Decode.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (5#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Imm_Gen' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Imm_Gen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Imm_Gen' (6#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Imm_Gen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'CHFU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/CHFU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CHFU' (7#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/CHFU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Compare' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Compare.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Compare' (8#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Compare.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Control' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Control.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Control' (9#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'HDU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/HDU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'HDU' (10#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/HDU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ID_EX.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX' (11#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ID_EX.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Decode' (12#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Decode.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Execute' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:23]
+INFO: [Synth 8-6157] synthesizing module 'FU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/FU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'FU' (13#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/FU.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:99]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (14#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SCU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'SCU' (15#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU_Control' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU_Control.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_Control' (16#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU_Control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/EX_MEM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (17#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/EX_MEM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Execute' (18#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:23]
+ERROR: [Synth 8-448] named port connection 'SPC_o' does not exist for instance 'ex0' of module 'Execute' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:99]
+INFO: [Synth 8-6157] synthesizing module 'MEM' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Data_Mem' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:23]
+ERROR: [Synth 8-6156] failed synthesizing module 'Data_Mem' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:23]
+ERROR: [Synth 8-6156] failed synthesizing module 'MEM' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:23]
+ERROR: [Synth 8-6156] failed synthesizing module 'Core' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 998.340 ; gain = 131.824
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+41 Infos, 0 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tfgg676-2L
+Top: Core
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 998.340 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Core' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Fetch' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Fetch.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/PC.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC' (1#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/PC.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Ins_Mem' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:23]
+INFO: [Synth 8-3876] $readmem data file 'D:/Vivado/RV32CPU/RiscV_CPU/RiscV_CPU.srcs/sources_1/new/inst_rom.data' is read successfully [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'Ins_Mem' (2#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'IF_ID' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/IF_ID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (3#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/IF_ID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Fetch' (4#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Fetch.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Decode' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Decode.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (5#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Imm_Gen' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Imm_Gen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Imm_Gen' (6#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Imm_Gen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'CHFU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/CHFU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CHFU' (7#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/CHFU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Compare' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Compare.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Compare' (8#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Compare.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Control' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Control.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Control' (9#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'HDU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/HDU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'HDU' (10#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/HDU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ID_EX.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX' (11#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ID_EX.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Decode' (12#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Decode.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Execute' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:23]
+INFO: [Synth 8-6157] synthesizing module 'FU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/FU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'FU' (13#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/FU.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:99]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (14#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SCU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'SCU' (15#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU_Control' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU_Control.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_Control' (16#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU_Control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/EX_MEM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (17#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/EX_MEM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Execute' (18#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MEM' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Data_Mem' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Data_Mem' (19#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'TC' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:23]
+WARNING: [Synth 8-567] referenced signal 'tbre' should be on the sensitivity list [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:65]
+WARNING: [Synth 8-3848] Net base_ram_o in module/entity TC does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'TC' (20#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:23]
+WARNING: [Synth 8-350] instance 'tc0' of module 'TC' requires 14 connections, but only 13 given [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:73]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM_WB.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB' (21#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM_WB.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MEM' (22#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:23]
+WARNING: [Synth 8-350] instance 'mem0' of module 'MEM' requires 29 connections, but only 28 given [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:106]
+INFO: [Synth 8-6157] synthesizing module 'WB' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/WB.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'WB' (23#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/WB.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Core' (24#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:23]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[31]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[30]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[29]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[28]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[27]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[26]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[25]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[24]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[23]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[22]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[21]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[20]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[19]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[18]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[17]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[16]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[15]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[14]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[13]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[12]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[11]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[10]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[9]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[8]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[7]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[6]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[5]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[4]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[3]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[2]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[1]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[0]
+WARNING: [Synth 8-3331] design TC has unconnected port port_status
+WARNING: [Synth 8-3331] design TC has unconnected port tsre
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[31]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[30]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[29]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[28]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[27]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[26]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[25]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[24]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[23]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[22]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[21]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[20]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[19]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[18]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[17]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[16]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[15]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[14]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[13]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[12]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[11]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[10]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[9]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[8]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[7]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[6]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[5]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[4]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[3]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[2]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[1]
+WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[0]
+WARNING: [Synth 8-3331] design SCU has unconnected port funct[4]
+WARNING: [Synth 8-3331] design SCU has unconnected port funct[3]
+WARNING: [Synth 8-3331] design SCU has unconnected port MEMread
+WARNING: [Synth 8-3331] design SCU has unconnected port MEMwrite
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[31]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[30]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[29]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[28]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[27]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[26]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[25]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[24]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[23]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[22]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[21]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[20]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[19]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[1]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1043.449 ; gain = 45.109
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin mem0:clk2 to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:106]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1043.449 ; gain = 45.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1043.449 ; gain = 45.109
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-141] Inserted 32 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk_50M'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:2]
+WARNING: [Vivado 12-584] No ports matched 'clk_11M0592'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:3]
+WARNING: [Vivado 12-507] No nets matched 'clk_11M0592_IBUF'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:4]
+WARNING: [Vivado 12-584] No ports matched 'clk_50M'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'clk_11M0592'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:7]
+WARNING: [Vivado 12-584] No ports matched 'touch_btn[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'touch_btn[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:11]
+WARNING: [Vivado 12-584] No ports matched 'touch_btn[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'touch_btn[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'clock_btn'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'reset_btn'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:15]
+WARNING: [Vivado 12-507] No nets matched 'clock_btn_IBUF'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:18]
+WARNING: [Vivado 12-507] No nets matched 'reset_btn_IBUF'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'txd'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'rxd'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:30]
+WARNING: [Vivado 12-584] No ports matched 'sl811_a0'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'sl811_wr_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'sl811_rd_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'sl811_cs_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'sl811_rst_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'sl811_drq_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'sl811_dack_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'sl811_intrq'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'sl811_d[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'sl811_d[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:42]
+WARNING: [Vivado 12-584] No ports matched 'sl811_d[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:43]
+WARNING: [Vivado 12-584] No ports matched 'sl811_d[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:44]
+WARNING: [Vivado 12-584] No ports matched 'sl811_d[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:45]
+WARNING: [Vivado 12-584] No ports matched 'sl811_d[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:46]
+WARNING: [Vivado 12-584] No ports matched 'sl811_d[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:47]
+WARNING: [Vivado 12-584] No ports matched 'sl811_d[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:48]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_iow_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:51]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_ior_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:52]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_cs_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:53]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_pwrst_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:54]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_int'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:55]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_cmd'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:56]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:57]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:58]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:59]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:60]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:61]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:62]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:63]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:64]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[8]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:65]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[9]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:66]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[10]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:67]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[11]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:68]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[12]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:69]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[13]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:70]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[14]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[15]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:72]
+WARNING: [Vivado 12-584] No ports matched 'video_clk'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'video_red[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'video_red[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:77]
+WARNING: [Vivado 12-584] No ports matched 'video_red[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:78]
+WARNING: [Vivado 12-584] No ports matched 'video_green[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:79]
+WARNING: [Vivado 12-584] No ports matched 'video_green[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:80]
+WARNING: [Vivado 12-584] No ports matched 'video_green[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:81]
+WARNING: [Vivado 12-584] No ports matched 'video_blue[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:82]
+WARNING: [Vivado 12-584] No ports matched 'video_blue[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:83]
+WARNING: [Vivado 12-584] No ports matched 'video_hsync'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:84]
+WARNING: [Vivado 12-584] No ports matched 'video_vsync'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:85]
+WARNING: [Vivado 12-584] No ports matched 'video_de'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:86]
+WARNING: [Vivado 12-584] No ports matched 'leds[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:89]
+WARNING: [Vivado 12-584] No ports matched 'leds[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:90]
+WARNING: [Vivado 12-584] No ports matched 'leds[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:91]
+WARNING: [Vivado 12-584] No ports matched 'leds[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'leds[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:93]
+WARNING: [Vivado 12-584] No ports matched 'leds[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:94]
+WARNING: [Vivado 12-584] No ports matched 'leds[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:95]
+WARNING: [Vivado 12-584] No ports matched 'leds[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:96]
+WARNING: [Vivado 12-584] No ports matched 'leds[8]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:97]
+WARNING: [Vivado 12-584] No ports matched 'leds[9]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:98]
+WARNING: [Vivado 12-584] No ports matched 'leds[10]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:99]
+WARNING: [Vivado 12-584] No ports matched 'leds[11]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:100]
+WARNING: [Vivado 12-584] No ports matched 'leds[12]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:101]
+WARNING: [Vivado 12-584] No ports matched 'leds[13]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:102]
+WARNING: [Vivado 12-584] No ports matched 'leds[14]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:103]
+WARNING: [Vivado 12-584] No ports matched 'leds[15]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:104]
+WARNING: [Vivado 12-584] No ports matched 'dpy0[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:107]
+WARNING: [Vivado 12-584] No ports matched 'dpy0[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:108]
+WARNING: [Vivado 12-584] No ports matched 'dpy0[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:109]
+WARNING: [Vivado 12-584] No ports matched 'dpy0[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:110]
+WARNING: [Vivado 12-584] No ports matched 'dpy0[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:111]
+WARNING: [Vivado 12-584] No ports matched 'dpy0[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:112]
+WARNING: [Vivado 12-584] No ports matched 'dpy0[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:113]
+WARNING: [Vivado 12-584] No ports matched 'dpy0[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:114]
+WARNING: [Vivado 12-584] No ports matched 'dpy1[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:117]
+WARNING: [Vivado 12-584] No ports matched 'dpy1[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:118]
+WARNING: [Vivado 12-584] No ports matched 'dpy1[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:119]
+WARNING: [Vivado 12-584] No ports matched 'dpy1[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:120]
+WARNING: [Vivado 12-584] No ports matched 'dpy1[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:121]
+WARNING: [Vivado 12-584] No ports matched 'dpy1[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:122]
+WARNING: [Vivado 12-584] No ports matched 'dpy1[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:123]
+WARNING: [Vivado 12-584] No ports matched 'dpy1[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:124]
+WARNING: [Vivado 12-584] No ports matched 'dip_sw[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:127]
+WARNING: [Vivado 12-584] No ports matched 'dip_sw[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:128]
+WARNING: [Vivado 12-584] No ports matched 'dip_sw[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'dip_sw[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:130]
+WARNING: [Vivado 12-584] No ports matched 'dip_sw[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:131]
+WARNING: [Vivado 12-584] No ports matched 'dip_sw[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:132]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:132]
+Finished Parsing XDC File [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Core_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:23 . Memory (MB): peak = 1385.992 ; gain = 387.652
+56 Infos, 194 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:23 . Memory (MB): peak = 1385.992 ; gain = 387.652
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Sat Dec  1 02:11:27 2018] Launched synth_1...
+Run output will be captured here: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.runs/synth_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  1 02:33:03 2018...
