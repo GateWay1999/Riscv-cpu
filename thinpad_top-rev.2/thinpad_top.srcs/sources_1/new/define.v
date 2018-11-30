@@ -18,33 +18,36 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-// 0ÏòÁ¿
+// 0å‘é‡
 `define SetZero         32'h00000000
-// ¸´Î»ĞÅºÅ
+// å¤ä½ä¿¡å·
 `define RSTon           1'b1
 `define RSToff          1'b0
-// Ìø×ª¿ØÖÆ
+// è·³è½¬æ§åˆ¶
 `define TakeBranch      1'b1
 `define NotTake         1'b0
-//  Õæ¼Ù
+//  çœŸå‡
 `define Truev           1'b1
 `define Falsev          1'b0
 //  ALUsrc
 `define RegSrc          1'b0
 `define ImmSrc          1'b1
-// ¶ÁĞ´¿ØÖÆ
+// è¯»å†™æ§åˆ¶
 `define WriteEnable     1'b1
 `define WriteDisable    1'b0
-// »ù´¡Î»¿í¶¨Òå
+//ä½¿èƒ½é«˜ä½
+`define Highv           1'b1
+`define Lowv            1'b0
+// åŸºç¡€ä½å®½å®šä¹‰
 `define InstAddrBus     31:0
 `define InstBus         31:0
 // Instruction Memory Size
 `define InstMemNum      131071
 `define InstMemNumLog2  17
-// ¼Ä´æÆ÷»ù´¡
+// å¯„å­˜å™¨åŸºç¡€
 `define RegAddrBus      4:0
 `define RegBus          31:0
-// ALU²Ù×÷Âë
+// ALUæ“ä½œç 
 `define ALU_NOP         4'b0000
 `define ALU_ADD         4'b0001
 `define ALU_SUB         4'b0010
@@ -59,7 +62,7 @@
 `define ALU_PC4         4'b1011
 `define ALU_LUI         4'b1100
 `define ALU_AUIPC       4'b1101
-// ALU¿ØÖÆÂë--ALUop
+// ALUæ§åˆ¶ç --ALUop
 `define ALU_N           2'b00
 `define ALU_A           2'b01
 `define ALU_M           2'b10
@@ -68,7 +71,7 @@
 `define IDEX            2'b00
 `define EXMEM           2'b10
 `define MEMWB           2'b01
-// Ìø×ªÖ¸Áî
+// è·³è½¬æŒ‡ä»¤
 `define BEQ             3'b000
 `define BNE             3'b001
 `define BLT             3'b100
@@ -77,13 +80,13 @@
 `define BGEU            3'b111
 `define JAL             3'b011
 `define JALR            3'b001
-// ·Ã´æ¿ØÖÆ DMop
+// è®¿å­˜æ§åˆ¶ DMop
 `define OB              3'b000
 `define OH              3'b001
 `define OW              3'b010
 `define LBU             3'b011
 `define LHU             3'b100
-// ´®ĞĞ¶Ë¿Ú¶¨Òå
+// ä¸²è¡Œç«¯å£å®šä¹‰
 `define PORTsend        1'h0
 `define PORTrecv        1'h1
 `define PORTaddr        20'hfffff
