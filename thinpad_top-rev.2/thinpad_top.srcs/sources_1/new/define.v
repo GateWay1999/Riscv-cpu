@@ -44,10 +44,10 @@
 // Instruction Memory Size
 `define InstMemNum      131071
 `define InstMemNumLog2  17
-// 寄存器基础
+// 寄存器基�?
 `define RegAddrBus      4:0
 `define RegBus          31:0
-// ALU操作码
+// ALU操作�?
 `define ALU_NOP         4'b0000
 `define ALU_ADD         4'b0001
 `define ALU_SUB         4'b0010
@@ -62,7 +62,7 @@
 `define ALU_PC4         4'b1011
 `define ALU_LUI         4'b1100
 `define ALU_AUIPC       4'b1101
-// ALU控制码--ALUop
+// ALU控制�?--ALUop
 `define ALU_N           2'b00
 `define ALU_A           2'b01
 `define ALU_M           2'b10
@@ -87,6 +87,10 @@
 `define LBU             3'b011
 `define LHU             3'b100
 // 串行端口定义
-`define PORTsend        1'h0
-`define PORTrecv        1'h1
 `define PORTaddr        20'hfffff
+// ״̬ת��
+`define statu0          3'b000
+`define statu1          3'b001
+`define statu2          3'b010
+`define statu3          3'b011
+`define statu4          3'b100
