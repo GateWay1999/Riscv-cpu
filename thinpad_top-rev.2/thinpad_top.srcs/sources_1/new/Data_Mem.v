@@ -95,14 +95,14 @@ module Data_Mem(
      
     always @ (negedge clk) begin //下降沿开始写
         if(MEMwrite == `Truev) begin //如果是写
-            is_write <= `Truev;
+            //is_write <= `Truev;
             temp_ram_data <= store_data;
         end
     end
  
     always @ (*) begin //读
         if(MEMread == `Truev) begin
-            is_write <= `Falsev;
+            //is_write <= `Falsev;
             case(funct)
                 `OB : begin
                     case(ac_addr[1:0])
@@ -129,7 +129,7 @@ module Data_Mem(
                     end
                 end
                 `OW : begin
-                    base_ram_addr = ac_addr[21:2];
+                    //base_ram_addr = ac_addr[21:2];
                     load_data <= base_ram_data;
                 end
                 `LBU : begin
