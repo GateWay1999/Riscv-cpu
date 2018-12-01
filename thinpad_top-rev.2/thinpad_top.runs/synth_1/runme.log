@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log Core.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Core.tcl
+    with args -log thinpad_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source thinpad_top.tcl
 
 
 ****** Vivado v2018.1 (64-bit)
@@ -8,22 +8,24 @@
   **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
-source Core.tcl -notrace
-Command: synth_design -top Core -part xc7a100tfgg676-2L
+source thinpad_top.tcl -notrace
+Command: synth_design -top thinpad_top -part xc7a100tfgg676-2L
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11532 
+INFO: Helper process launched with PID 13904 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 360.031 ; gain = 100.629
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 359.742 ; gain = 100.547
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'thinpad_top' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:3]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:89]
 INFO: [Synth 8-6157] synthesizing module 'Core' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Fetch' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Fetch.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/PC.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'PC' (1#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/PC.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Ins_Mem' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:23]
-INFO: [Synth 8-3876] $readmem data file 'D:/Vivado/RV32CPU/RiscV_CPU/RiscV_CPU.srcs/sources_1/new/inst_rom.data' is read successfully [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:30]
+INFO: [Synth 8-3876] $readmem data file 'C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/inst_rom.data' is read successfully [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:30]
 INFO: [Synth 8-6155] done synthesizing module 'Ins_Mem' (2#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Ins_Mem.v:23]
 INFO: [Synth 8-6157] synthesizing module 'IF_ID' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/IF_ID.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (3#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/IF_ID.v:23]
@@ -47,7 +49,7 @@ INFO: [Synth 8-6155] done synthesizing module 'Decode' (12#1) [C:/Users/blade/De
 INFO: [Synth 8-6157] synthesizing module 'Execute' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:23]
 INFO: [Synth 8-6157] synthesizing module 'FU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/FU.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'FU' (13#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/FU.v:23]
-INFO: [Synth 8-226] default block is never used [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:99]
+INFO: [Synth 8-226] default block is never used [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:100]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (14#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ALU.v:23]
 INFO: [Synth 8-6157] synthesizing module 'SCU' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/SCU.v:23]
@@ -59,106 +61,168 @@ INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (17#1) [C:/Users/blade/De
 INFO: [Synth 8-6155] done synthesizing module 'Execute' (18#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Execute.v:23]
 INFO: [Synth 8-6157] synthesizing module 'MEM' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Data_Mem' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:23]
+WARNING: [Synth 8-3848] Net base_ram_addr in module/entity Data_Mem does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:40]
+WARNING: [Synth 8-3848] Net base_ram_be_n in module/entity Data_Mem does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:41]
+WARNING: [Synth 8-3848] Net base_ram_ce_n in module/entity Data_Mem does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:42]
+WARNING: [Synth 8-3848] Net base_ram_oe_n in module/entity Data_Mem does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:43]
+WARNING: [Synth 8-3848] Net base_ram_we_n in module/entity Data_Mem does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:44]
 INFO: [Synth 8-6155] done synthesizing module 'Data_Mem' (19#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Data_Mem.v:23]
 INFO: [Synth 8-6157] synthesizing module 'TC' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:23]
-WARNING: [Synth 8-567] referenced signal 'tbre' should be on the sensitivity list [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:65]
-WARNING: [Synth 8-3848] Net base_ram_o in module/entity TC does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:33]
 INFO: [Synth 8-6155] done synthesizing module 'TC' (20#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:23]
-WARNING: [Synth 8-350] instance 'tc0' of module 'TC' requires 14 connections, but only 13 given [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:73]
+WARNING: [Synth 8-350] instance 'tc0' of module 'TC' requires 16 connections, but only 12 given [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
 INFO: [Synth 8-6157] synthesizing module 'MEM_WB' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM_WB.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'MEM_WB' (21#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM_WB.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'MEM' (22#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:23]
-WARNING: [Synth 8-350] instance 'mem0' of module 'MEM' requires 29 connections, but only 28 given [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:106]
+WARNING: [Synth 8-350] instance 'mem0' of module 'MEM' requires 30 connections, but only 29 given [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:108]
 INFO: [Synth 8-6157] synthesizing module 'WB' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/WB.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'WB' (23#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/WB.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Core' (24#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:23]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[31]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[30]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[29]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[28]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[27]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[26]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[25]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[24]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[23]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[22]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[21]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[20]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[19]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[18]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[17]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[16]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[15]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[14]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[13]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[12]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[11]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[10]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[9]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[8]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[7]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[6]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[5]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[4]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[3]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[2]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[1]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_o[0]
-WARNING: [Synth 8-3331] design TC has unconnected port port_status
-WARNING: [Synth 8-3331] design TC has unconnected port tsre
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[31]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[30]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[29]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[28]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[27]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[26]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[25]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[24]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[23]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[22]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[21]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[20]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[19]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[18]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[17]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[16]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[15]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[14]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[13]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[12]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[11]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[10]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[9]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[8]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[7]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[6]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[5]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[4]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[3]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[2]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[1]
-WARNING: [Synth 8-3331] design TC has unconnected port base_ram_i[0]
-WARNING: [Synth 8-3331] design SCU has unconnected port funct[4]
-WARNING: [Synth 8-3331] design SCU has unconnected port funct[3]
-WARNING: [Synth 8-3331] design SCU has unconnected port MEMread
-WARNING: [Synth 8-3331] design SCU has unconnected port MEMwrite
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[31]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[30]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[29]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[28]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[27]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[26]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[25]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[24]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[23]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[22]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[21]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[20]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[19]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[1]
-WARNING: [Synth 8-3331] design Ins_Mem has unconnected port addr[0]
+WARNING: [Synth 8-350] instance 'RV_CPU' of module 'Core' requires 13 connections, but only 2 given [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:89]
+WARNING: [Synth 8-3848] Net leds in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:12]
+WARNING: [Synth 8-3848] Net dpy0 in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:13]
+WARNING: [Synth 8-3848] Net dpy1 in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:14]
+WARNING: [Synth 8-3848] Net uart_rdn in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:17]
+WARNING: [Synth 8-3848] Net uart_wrn in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:18]
+WARNING: [Synth 8-3848] Net base_ram_addr in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:25]
+WARNING: [Synth 8-3848] Net base_ram_be_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:26]
+WARNING: [Synth 8-3848] Net base_ram_ce_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:27]
+WARNING: [Synth 8-3848] Net base_ram_oe_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:28]
+WARNING: [Synth 8-3848] Net base_ram_we_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:29]
+WARNING: [Synth 8-3848] Net ext_ram_addr in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:33]
+WARNING: [Synth 8-3848] Net ext_ram_be_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:34]
+WARNING: [Synth 8-3848] Net ext_ram_ce_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:35]
+WARNING: [Synth 8-3848] Net ext_ram_oe_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:36]
+WARNING: [Synth 8-3848] Net ext_ram_we_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:37]
+WARNING: [Synth 8-3848] Net txd in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:40]
+WARNING: [Synth 8-3848] Net flash_a in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:44]
+WARNING: [Synth 8-3848] Net flash_rp_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:46]
+WARNING: [Synth 8-3848] Net flash_vpen in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:47]
+WARNING: [Synth 8-3848] Net flash_ce_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:48]
+WARNING: [Synth 8-3848] Net flash_oe_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:49]
+WARNING: [Synth 8-3848] Net flash_we_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:50]
+WARNING: [Synth 8-3848] Net flash_byte_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:51]
+WARNING: [Synth 8-3848] Net sl811_a0 in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:54]
+WARNING: [Synth 8-3848] Net sl811_wr_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:56]
+WARNING: [Synth 8-3848] Net sl811_rd_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:57]
+WARNING: [Synth 8-3848] Net sl811_cs_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:58]
+WARNING: [Synth 8-3848] Net sl811_rst_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:59]
+WARNING: [Synth 8-3848] Net sl811_dack_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:60]
+WARNING: [Synth 8-3848] Net dm9k_cmd in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:65]
+WARNING: [Synth 8-3848] Net dm9k_iow_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:67]
+WARNING: [Synth 8-3848] Net dm9k_ior_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:68]
+WARNING: [Synth 8-3848] Net dm9k_cs_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:69]
+WARNING: [Synth 8-3848] Net dm9k_pwrst_n in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:70]
+WARNING: [Synth 8-3848] Net video_red in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:74]
+WARNING: [Synth 8-3848] Net video_green in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:75]
+WARNING: [Synth 8-3848] Net video_blue in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:76]
+WARNING: [Synth 8-3848] Net video_hsync in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:77]
+WARNING: [Synth 8-3848] Net video_vsync in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:78]
+WARNING: [Synth 8-3848] Net video_clk in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:79]
+WARNING: [Synth 8-3848] Net video_de in module/entity thinpad_top does not have driver. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'thinpad_top' (25#1) [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:3]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[19]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[18]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[17]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[16]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[15]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[14]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[13]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[12]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[11]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[10]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[9]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[8]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[7]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[6]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[5]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[4]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[3]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[2]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[1]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_addr[0]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_be_n[3]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_be_n[2]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_be_n[1]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_be_n[0]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_ce_n
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_oe_n
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_we_n
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[31]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[30]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[29]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[28]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[27]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[26]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[25]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[24]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[23]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[22]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[21]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[20]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[19]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[18]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[17]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[16]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[15]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[14]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[13]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[12]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[11]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[10]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[9]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[8]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[7]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[6]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[5]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[4]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[3]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[2]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[1]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port base_ram_data[0]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port clk
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port rst
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[31]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[30]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[29]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[28]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[27]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[26]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[25]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[24]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[23]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[22]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[21]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[20]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[19]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[18]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[17]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[16]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[15]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[14]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[13]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[12]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[11]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[10]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[9]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[8]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[7]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[6]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[5]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[4]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[3]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[2]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[1]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port ac_addr[0]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port store_data[31]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port store_data[30]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port store_data[29]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port store_data[28]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port store_data[27]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port store_data[26]
+WARNING: [Synth 8-3331] design Data_Mem has unconnected port store_data[25]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 421.813 ; gain = 162.410
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 423.250 ; gain = 164.055
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -167,15 +231,26 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin mem0:clk2 to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:106]
+WARNING: [Synth 8-3295] tying undriven pin tc0:send_data[7] to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
+WARNING: [Synth 8-3295] tying undriven pin tc0:send_data[6] to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
+WARNING: [Synth 8-3295] tying undriven pin tc0:send_data[5] to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
+WARNING: [Synth 8-3295] tying undriven pin tc0:send_data[4] to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
+WARNING: [Synth 8-3295] tying undriven pin tc0:send_data[3] to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
+WARNING: [Synth 8-3295] tying undriven pin tc0:send_data[2] to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
+WARNING: [Synth 8-3295] tying undriven pin tc0:send_data[1] to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
+WARNING: [Synth 8-3295] tying undriven pin tc0:send_data[0] to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:74]
+WARNING: [Synth 8-3295] tying undriven pin mem0:clk2 to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/Core.v:108]
+WARNING: [Synth 8-3295] tying undriven pin RV_CPU:uart_dataready to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:89]
+WARNING: [Synth 8-3295] tying undriven pin RV_CPU:uart_tbre to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:89]
+WARNING: [Synth 8-3295] tying undriven pin RV_CPU:uart_tsre to constant 0 [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/thinpad_top.v:89]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 421.813 ; gain = 162.410
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 423.250 ; gain = 164.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 421.813 ; gain = 162.410
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 423.250 ; gain = 164.055
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2L
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -183,135 +258,39 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc]
-WARNING: [Vivado 12-584] No ports matched 'clk_50M'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:2]
-WARNING: [Vivado 12-584] No ports matched 'clk_11M0592'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:3]
 WARNING: [Vivado 12-507] No nets matched 'clk_11M0592_IBUF'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:4]
-WARNING: [Vivado 12-584] No ports matched 'clk_50M'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:6]
-WARNING: [Vivado 12-584] No ports matched 'clk_11M0592'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:7]
-WARNING: [Vivado 12-584] No ports matched 'touch_btn[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:10]
-WARNING: [Vivado 12-584] No ports matched 'touch_btn[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:11]
-WARNING: [Vivado 12-584] No ports matched 'touch_btn[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:12]
-WARNING: [Vivado 12-584] No ports matched 'touch_btn[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:13]
-WARNING: [Vivado 12-584] No ports matched 'clock_btn'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:14]
-WARNING: [Vivado 12-584] No ports matched 'reset_btn'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-507] No nets matched 'clock_btn_IBUF'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-507] No nets matched 'reset_btn_IBUF'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:19]
-WARNING: [Vivado 12-584] No ports matched 'txd'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:29]
-WARNING: [Vivado 12-584] No ports matched 'rxd'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:30]
-WARNING: [Vivado 12-584] No ports matched 'sl811_a0'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:33]
-WARNING: [Vivado 12-584] No ports matched 'sl811_wr_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:34]
-WARNING: [Vivado 12-584] No ports matched 'sl811_rd_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:35]
-WARNING: [Vivado 12-584] No ports matched 'sl811_cs_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:36]
-WARNING: [Vivado 12-584] No ports matched 'sl811_rst_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:37]
-WARNING: [Vivado 12-584] No ports matched 'sl811_drq_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:38]
-WARNING: [Vivado 12-584] No ports matched 'sl811_dack_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:39]
-WARNING: [Vivado 12-584] No ports matched 'sl811_intrq'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:40]
-WARNING: [Vivado 12-584] No ports matched 'sl811_d[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:41]
-WARNING: [Vivado 12-584] No ports matched 'sl811_d[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:42]
-WARNING: [Vivado 12-584] No ports matched 'sl811_d[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:43]
-WARNING: [Vivado 12-584] No ports matched 'sl811_d[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:44]
-WARNING: [Vivado 12-584] No ports matched 'sl811_d[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:45]
-WARNING: [Vivado 12-584] No ports matched 'sl811_d[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:46]
-WARNING: [Vivado 12-584] No ports matched 'sl811_d[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:47]
-WARNING: [Vivado 12-584] No ports matched 'sl811_d[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:48]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_iow_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:51]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_ior_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:52]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_cs_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:53]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_pwrst_n'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:54]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_int'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:55]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_cmd'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:56]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:57]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:58]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:59]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:60]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:61]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:62]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:63]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:64]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[8]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:65]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[9]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:66]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[10]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:67]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[11]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:68]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[12]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:69]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[13]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:70]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[14]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:71]
-WARNING: [Vivado 12-584] No ports matched 'dm9k_sd[15]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:72]
-WARNING: [Vivado 12-584] No ports matched 'video_clk'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:75]
-WARNING: [Vivado 12-584] No ports matched 'video_red[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:76]
-WARNING: [Vivado 12-584] No ports matched 'video_red[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:77]
-WARNING: [Vivado 12-584] No ports matched 'video_red[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:78]
-WARNING: [Vivado 12-584] No ports matched 'video_green[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:79]
-WARNING: [Vivado 12-584] No ports matched 'video_green[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:80]
-WARNING: [Vivado 12-584] No ports matched 'video_green[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:81]
-WARNING: [Vivado 12-584] No ports matched 'video_blue[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:82]
-WARNING: [Vivado 12-584] No ports matched 'video_blue[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:83]
-WARNING: [Vivado 12-584] No ports matched 'video_hsync'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:84]
-WARNING: [Vivado 12-584] No ports matched 'video_vsync'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:85]
-WARNING: [Vivado 12-584] No ports matched 'video_de'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:86]
-WARNING: [Vivado 12-584] No ports matched 'leds[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:89]
-WARNING: [Vivado 12-584] No ports matched 'leds[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:90]
-WARNING: [Vivado 12-584] No ports matched 'leds[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:91]
-WARNING: [Vivado 12-584] No ports matched 'leds[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:92]
-WARNING: [Vivado 12-584] No ports matched 'leds[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:93]
-WARNING: [Vivado 12-584] No ports matched 'leds[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:94]
-WARNING: [Vivado 12-584] No ports matched 'leds[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:95]
-WARNING: [Vivado 12-584] No ports matched 'leds[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:96]
-WARNING: [Vivado 12-584] No ports matched 'leds[8]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:97]
-WARNING: [Vivado 12-584] No ports matched 'leds[9]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:98]
-WARNING: [Vivado 12-584] No ports matched 'leds[10]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:99]
-WARNING: [Vivado 12-584] No ports matched 'leds[11]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:100]
-WARNING: [Vivado 12-584] No ports matched 'leds[12]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:101]
-WARNING: [Vivado 12-584] No ports matched 'leds[13]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:102]
-WARNING: [Vivado 12-584] No ports matched 'leds[14]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:103]
-WARNING: [Vivado 12-584] No ports matched 'leds[15]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:104]
-WARNING: [Vivado 12-584] No ports matched 'dpy0[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:107]
-WARNING: [Vivado 12-584] No ports matched 'dpy0[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:108]
-WARNING: [Vivado 12-584] No ports matched 'dpy0[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:109]
-WARNING: [Vivado 12-584] No ports matched 'dpy0[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:110]
-WARNING: [Vivado 12-584] No ports matched 'dpy0[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:111]
-WARNING: [Vivado 12-584] No ports matched 'dpy0[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:112]
-WARNING: [Vivado 12-584] No ports matched 'dpy0[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:113]
-WARNING: [Vivado 12-584] No ports matched 'dpy0[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:114]
-WARNING: [Vivado 12-584] No ports matched 'dpy1[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:117]
-WARNING: [Vivado 12-584] No ports matched 'dpy1[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:118]
-WARNING: [Vivado 12-584] No ports matched 'dpy1[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:119]
-WARNING: [Vivado 12-584] No ports matched 'dpy1[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:120]
-WARNING: [Vivado 12-584] No ports matched 'dpy1[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:121]
-WARNING: [Vivado 12-584] No ports matched 'dpy1[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:122]
-WARNING: [Vivado 12-584] No ports matched 'dpy1[6]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:123]
-WARNING: [Vivado 12-584] No ports matched 'dpy1[7]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:124]
-WARNING: [Vivado 12-584] No ports matched 'dip_sw[0]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:127]
-WARNING: [Vivado 12-584] No ports matched 'dip_sw[1]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:128]
-WARNING: [Vivado 12-584] No ports matched 'dip_sw[2]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:129]
-WARNING: [Vivado 12-584] No ports matched 'dip_sw[3]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:130]
-WARNING: [Vivado 12-584] No ports matched 'dip_sw[4]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:131]
-WARNING: [Vivado 12-584] No ports matched 'dip_sw[5]'. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:132]
-INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:132]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Core_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Core_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/Core_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/constrs_1/new/thinpad_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/thinpad_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/thinpad_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 769.574 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 777.270 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 769.574 ; gain = 510.172
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 777.270 ; gain = 518.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 769.574 ; gain = 510.172
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 777.270 ; gain = 518.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 769.574 ; gain = 510.172
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 777.270 ; gain = 518.074
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "inst_mem" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "register_reg[31]" won't be mapped to RAM because it is too sparse
@@ -351,6 +330,14 @@ INFO: [Synth 8-5546] ROM "MEMread" won't be mapped to RAM because it is too spar
 INFO: [Synth 8-5544] ROM "Regwrite" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "ALUcode" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "ALUcode" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'reading_reg' in module 'TC'
+INFO: [Synth 8-802] inferred FSM for state register 'writing_reg' in module 'TC'
+INFO: [Synth 8-5544] ROM "SPC_o" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "read_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "uart_rdn" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reading" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "base_ram_o" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "writing" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 WARNING: [Synth 8-327] inferring latch for variable 'register_reg[31]' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:40]
 WARNING: [Synth 8-327] inferring latch for variable 'register_reg[30]' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:40]
 WARNING: [Synth 8-327] inferring latch for variable 'register_reg[29]' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:40]
@@ -384,9 +371,25 @@ WARNING: [Synth 8-327] inferring latch for variable 'register_reg[2]' [C:/Users/
 WARNING: [Synth 8-327] inferring latch for variable 'register_reg[1]' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:40]
 WARNING: [Synth 8-327] inferring latch for variable 'register_reg[0]' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/RegFile.v:40]
 WARNING: [Synth 8-327] inferring latch for variable 'change_data_reg' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/CHFU.v:45]
-WARNING: [Synth 8-327] inferring latch for variable 'SPC_o_reg' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:67]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                              000
+                 iSTATE0 |                              010 |                              001
+                 iSTATE1 |                              100 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'reading_reg' using encoding 'one-hot' in module 'TC'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                              000
+                 iSTATE0 |                             0010 |                              001
+                 iSTATE1 |                             0100 |                              010
+                 iSTATE2 |                             1000 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'writing_reg' using encoding 'one-hot' in module 'TC'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 769.574 ; gain = 510.172
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 777.270 ; gain = 518.074
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -404,26 +407,30 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 10    
+	               32 Bit    Registers := 11    
+	                8 Bit    Registers := 1     
 	                5 Bit    Registers := 7     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 14    
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 58    
-	   5 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
 	   3 Input     32 Bit        Muxes := 2     
 	   2 Input     20 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
 	   2 Input      5 Bit        Muxes := 8     
 	   8 Input      4 Bit        Muxes := 1     
 	   7 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 3     
 	   2 Input      2 Bit        Muxes := 10    
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 61    
-	   3 Input      1 Bit        Muxes := 5     
-	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 68    
+	   3 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -442,7 +449,7 @@ Detailed RTL Component Info :
 Module Ins_Mem 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   5 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
 Module IF_ID 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -532,10 +539,11 @@ Detailed RTL Component Info :
 +---Registers : 
 	               32 Bit    Registers := 2     
 	                5 Bit    Registers := 2     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 4     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
 Module Execute 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -544,16 +552,27 @@ Detailed RTL Component Info :
 Module TC 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 4     
 Module MEM_WB 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 2     
 	                5 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module WB 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -574,333 +593,58 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-6014] Unused sequential element dc0/ide0/rs2_data_o_reg was removed.  [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ID_EX.v:73]
-INFO: [Synth 8-5546] ROM "dc0/cp0/MEMread" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design SCU has unconnected port funct[4]
-WARNING: [Synth 8-3331] design SCU has unconnected port funct[3]
-WARNING: [Synth 8-3331] design SCU has unconnected port MEMread
-WARNING: [Synth 8-3331] design SCU has unconnected port MEMwrite
-WARNING: [Synth 8-3331] design Core has unconnected port uart_tsre
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[26]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[31]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[27]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[31]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[28]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[31]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[29]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[31]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[31]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[30]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[25]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[30]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/pc_o_reg[3]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[6]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[30]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[24]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[10]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[24]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[11]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[24]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[7]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[2]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[8]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[24]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[9]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[24]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[23]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[24]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[24]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[20]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[22]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[3]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[20]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[19]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[18]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[19]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[19]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[17]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[17]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[16]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[16]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[14]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[13]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[14]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fh0/ifd0/inst_data_o_reg[14] )
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[2]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[1]'
-INFO: [Synth 8-3886] merging instance 'fh0/ifd0/inst_data_o_reg[1]' (FDRE) to 'fh0/ifd0/inst_data_o_reg[0]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[19]' (FD) to 'dc0/ide0/imm_o_reg[20]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[20]' (FD) to 'dc0/ide0/imm_o_reg[21]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[21]' (FD) to 'dc0/ide0/imm_o_reg[22]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[22]' (FD) to 'dc0/ide0/imm_o_reg[23]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[23]' (FD) to 'dc0/ide0/imm_o_reg[24]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[24]' (FD) to 'dc0/ide0/imm_o_reg[25]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[25]' (FD) to 'dc0/ide0/imm_o_reg[26]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[26]' (FD) to 'dc0/ide0/imm_o_reg[27]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[27]' (FD) to 'dc0/ide0/imm_o_reg[28]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[28]' (FD) to 'dc0/ide0/imm_o_reg[29]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[29]' (FD) to 'dc0/ide0/imm_o_reg[30]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[30]' (FD) to 'dc0/ide0/imm_o_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/MEMtoReg_o_reg' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rd_o_reg[3]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rd_o_reg[4]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rd_o_reg[1]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rd_o_reg[2]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/MEMread_o_reg' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[4]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[5]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[6]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[7]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[8]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[12]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[13]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[15]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[16]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[17]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[18]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rs1_o_reg[3]' (FD) to 'dc0/ide0/rs1_o_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rs1_o_reg[4]' (FD) to 'dc0/ide0/rs1_o_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rs1_o_reg[1]' (FD) to 'dc0/ide0/rs1_o_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rs1_o_reg[2]' (FD) to 'dc0/ide0/rs2_o_reg[0]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/imm_o_reg[31]' (FD) to 'dc0/ide0/rs2_o_reg[0]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rs2_o_reg[3]' (FD) to 'dc0/ide0/rs2_o_reg[0]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rs2_o_reg[4]' (FD) to 'dc0/ide0/rs2_o_reg[0]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dc0/ide0/rs2_o_reg[0] )
-INFO: [Synth 8-3886] merging instance 'ex0/em0/MEMtoReg_o_reg' (FD) to 'ex0/em0/MEMread_o_reg'
-INFO: [Synth 8-3886] merging instance 'ex0/em0/rd_o_reg[3]' (FD) to 'ex0/em0/MEMread_o_reg'
-INFO: [Synth 8-3886] merging instance 'ex0/em0/rd_o_reg[4]' (FD) to 'ex0/em0/MEMread_o_reg'
-INFO: [Synth 8-3886] merging instance 'ex0/em0/rd_o_reg[1]' (FD) to 'ex0/em0/MEMread_o_reg'
-INFO: [Synth 8-3886] merging instance 'ex0/em0/rd_o_reg[2]' (FD) to 'ex0/em0/MEMread_o_reg'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (ex0/\em0/MEMread_o_reg )
-INFO: [Synth 8-3886] merging instance 'mem0/mw0/MEMtoReg_o_reg' (FD) to 'mem0/mw0/rd_o_reg[1]'
-INFO: [Synth 8-3886] merging instance 'dc0/ide0/rs2_o_reg[0]' (FD) to 'mem0/mw0/rd_o_reg[1]'
-INFO: [Synth 8-3886] merging instance 'mem0/mw0/rd_o_reg[3]' (FD) to 'mem0/mw0/rd_o_reg[1]'
-INFO: [Synth 8-3886] merging instance 'mem0/mw0/rd_o_reg[4]' (FD) to 'mem0/mw0/rd_o_reg[1]'
-INFO: [Synth 8-3886] merging instance 'mem0/mw0/rd_o_reg[1]' (FD) to 'mem0/mw0/rd_o_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem0/mw0/rd_o_reg[2] )
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[2][15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][16]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[6][16]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][16]  is always disabled
-WARNING: [Synth 8-264] enable of latch \dc0/rf0 /\register_reg[4][16]  is always disabled
-INFO: [Common 17-14] Message 'Synth 8-264' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][0]' (LDC) to 'dc0/rf0/register_reg[4][0]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][0]' (LDC) to 'dc0/rf0/register_reg[2][0]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][1]' (LDC) to 'dc0/rf0/register_reg[4][1]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][1]' (LDC) to 'dc0/rf0/register_reg[2][1]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][2]' (LDC) to 'dc0/rf0/register_reg[4][2]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][2]' (LDC) to 'dc0/rf0/register_reg[2][2]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][3]' (LDC) to 'dc0/rf0/register_reg[4][3]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][3]' (LDC) to 'dc0/rf0/register_reg[2][3]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][4]' (LDC) to 'dc0/rf0/register_reg[4][4]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][4]' (LDC) to 'dc0/rf0/register_reg[2][4]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][5]' (LDC) to 'dc0/rf0/register_reg[4][5]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][5]' (LDC) to 'dc0/rf0/register_reg[2][5]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][6]' (LDC) to 'dc0/rf0/register_reg[4][6]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][6]' (LDC) to 'dc0/rf0/register_reg[2][6]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][7]' (LDC) to 'dc0/rf0/register_reg[4][7]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][7]' (LDC) to 'dc0/rf0/register_reg[2][7]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][8]' (LDC) to 'dc0/rf0/register_reg[4][8]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][8]' (LDC) to 'dc0/rf0/register_reg[2][8]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][9]' (LDC) to 'dc0/rf0/register_reg[4][9]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][9]' (LDC) to 'dc0/rf0/register_reg[2][9]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][10]' (LDC) to 'dc0/rf0/register_reg[4][10]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][10]' (LDC) to 'dc0/rf0/register_reg[2][10]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][11]' (LDC) to 'dc0/rf0/register_reg[4][11]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][11]' (LDC) to 'dc0/rf0/register_reg[2][11]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][12]' (LDC) to 'dc0/rf0/register_reg[4][12]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][12]' (LDC) to 'dc0/rf0/register_reg[2][12]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][13]' (LDC) to 'dc0/rf0/register_reg[4][13]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][13]' (LDC) to 'dc0/rf0/register_reg[2][13]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[6][14]' (LDC) to 'dc0/rf0/register_reg[4][14]'
-INFO: [Synth 8-3886] merging instance 'dc0/rf0/register_reg[4][14]' (LDC) to 'dc0/rf0/register_reg[2][14]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][31]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][30]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][29]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][28]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][27]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][26]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][25]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][24]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][23]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][22]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][21]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][20]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][19]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][18]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][17]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][16]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][15]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][14]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][13]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][12]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][11]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][10]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][9]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][8]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][7]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][6]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][5]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][4]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][3]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][2]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][1]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[31][0]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][31]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][30]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][29]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][28]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][27]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][26]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][25]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][24]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][23]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][22]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][21]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][20]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][19]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][18]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][17]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][16]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][15]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][14]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][13]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][12]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][11]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][10]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][9]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][8]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][7]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][6]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][5]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][4]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][3]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][2]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][1]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[30][0]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][31]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][30]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][29]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][28]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][27]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][26]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][25]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][24]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][23]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][22]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][21]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][20]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][19]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][18]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][17]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][16]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][15]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][14]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][13]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][12]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][11]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][10]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][9]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][8]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][7]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][6]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][5]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][4]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][3]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][2]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][1]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[29][0]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[28][31]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[28][30]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[28][29]) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (register_reg[28][28]) is unused and will be removed from module RegFile.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'mem0/tc0/uart_wrn_reg__0/Q' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:43]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:43]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:43]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'mem0/tc0/uart_rdn_reg/Q' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:60]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:60]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:60]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'mem0/tc0/SPC_o_reg__0/Q' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:61]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:61]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:61]
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dc0/ide0/imm_o_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (ex0/\em0/MEMwrite_o_reg )
+WARNING: [Synth 8-6014] Unused sequential element RV_CPU/dc0/ide0/rs2_data_o_reg was removed.  [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/ID_EX.v:73]
+WARNING: [Synth 8-6014] Unused sequential element RV_CPU/mem0/tc0/read_data_reg was removed.  [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:66]
+WARNING: [Synth 8-6014] Unused sequential element RV_CPU/mem0/tc0/uart_wrn_reg was removed.  [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:51]
+WARNING: [Synth 8-6014] Unused sequential element RV_CPU/mem0/tc0/uart_rdn_reg was removed.  [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:54]
+INFO: [Synth 8-5546] ROM "RV_CPU/dc0/cp0/MEMread" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[31]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[30]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[29]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[28]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[27]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[26]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[25]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[24]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[23]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[22]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[21]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[20]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[19]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[18]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[17]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[16]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[15]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[14]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[13]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[12]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[11]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[10]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[9]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[8]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[7]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[6]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[5]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[4]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[3]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[2]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[1]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/store_data_o_reg[0]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/funct_o_reg[4]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/funct_o_reg[3]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/funct_o_reg[2]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/funct_o_reg[1]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (em0/funct_o_reg[0]) is unused and will be removed from module Execute.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/mem0/tc0/base_ram_o_reg[7]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/mem0/tc0/base_ram_o_reg[6]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/mem0/tc0/base_ram_o_reg[5]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/mem0/tc0/base_ram_o_reg[4]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/mem0/tc0/base_ram_o_reg[3]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/mem0/tc0/base_ram_o_reg[2]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/mem0/tc0/base_ram_o_reg[1]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/mem0/tc0/base_ram_o_reg[0]) is unused and will be removed from module thinpad_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 769.574 ; gain = 510.172
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 777.270 ; gain = 518.074
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -912,13 +656,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:57 . Memory (MB): peak = 769.574 ; gain = 510.172
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 777.270 ; gain = 518.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:57 . Memory (MB): peak = 769.574 ; gain = 510.172
+Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:00:59 . Memory (MB): peak = 852.734 ; gain = 593.539
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -929,8 +673,64 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][31]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][30]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][29]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][28]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][27]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][26]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][25]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][24]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][23]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][22]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][21]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][20]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][19]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][18]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][17]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][16]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][15]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][14]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][13]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][12]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][11]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][10]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][9]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][8]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][7]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][6]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][5]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][4]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][3]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][2]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][1]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[31][0]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][31]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][30]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][29]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][28]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][27]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][26]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][25]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][24]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][23]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][22]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][21]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][20]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][19]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][18]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][17]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][16]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][15]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][14]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][13]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][12]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][11]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][10]) is unused and will be removed from module thinpad_top.
+WARNING: [Synth 8-3332] Sequential element (RV_CPU/dc0/rf0/register_reg[30][9]) is unused and will be removed from module thinpad_top.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:58 . Memory (MB): peak = 819.715 ; gain = 560.313
+Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 857.426 ; gain = 598.230
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -954,22 +754,20 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 819.715 ; gain = 560.313
+Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 857.426 ; gain = 598.230
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-3352] multi-driven net base_ram_ce_n_OBUF with 1st driver pin 'mem0/dm0/base_ram_ce_n' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/MEM.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net base_ram_ce_n_OBUF with 2nd driver pin 'mem0/tc0/base_ram_ce_n_reg/Q' [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/TC.v:42]
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        1|Failed |Multi driven nets |
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 819.715 ; gain = 560.313
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 857.426 ; gain = 598.230
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -981,99 +779,94 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 819.715 ; gain = 560.313
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 857.426 ; gain = 598.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 819.715 ; gain = 560.313
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 857.426 ; gain = 598.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 819.715 ; gain = 560.313
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 857.426 ; gain = 598.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 819.715 ; gain = 560.313
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 857.426 ; gain = 598.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |Data_Mem      |         1|
-+------+--------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |Data_Mem |     1|
-|2     |BUFG     |     3|
-|3     |CARRY4   |    59|
-|4     |LUT1     |    36|
-|5     |LUT2     |    67|
-|6     |LUT3     |   142|
-|7     |LUT4     |   126|
-|8     |LUT5     |   145|
-|9     |LUT6     |   446|
-|10    |MUXF7    |     4|
-|11    |FDRE     |   228|
-|12    |LD       |    32|
-|13    |LDC      |    32|
-|14    |IBUF     |     2|
-|15    |OBUF     |    29|
-+------+---------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     4|
+|2     |CARRY4 |    29|
+|3     |LUT1   |    19|
+|4     |LUT2   |   103|
+|5     |LUT3   |    17|
+|6     |LUT4   |    52|
+|7     |LUT5   |   111|
+|8     |LUT6   |   319|
+|9     |MUXF7  |    12|
+|10    |FDRE   |   182|
+|11    |LDC    |   128|
+|12    |IBUF   |     1|
+|13    |OBUFT  |   141|
++------+-------+------+
 
 Report Instance Areas: 
-+------+---------+--------+------+
-|      |Instance |Module  |Cells |
-+------+---------+--------+------+
-|1     |top      |        |  1410|
-|2     |  dc0    |Decode  |   913|
-|3     |    chf0 |CHFU    |    42|
-|4     |    ide0 |ID_EX   |   831|
-|5     |    ig0  |Imm_Gen |     8|
-|6     |    rf0  |RegFile |    32|
-|7     |  ex0    |Execute |   104|
-|8     |    alu0 |ALU     |    29|
-|9     |    em0  |EX_MEM  |    75|
-|10    |  fh0    |Fetch   |   203|
-|11    |    ifd0 |IF_ID   |   156|
-|12    |    pc0  |PC      |    47|
-|13    |  mem0   |MEM     |   156|
-|14    |    mw0  |MEM_WB  |    96|
-|15    |    tc0  |TC      |     1|
-+------+---------+--------+------+
++------+-----------+--------+------+
+|      |Instance   |Module  |Cells |
++------+-----------+--------+------+
+|1     |top        |        |  1118|
+|2     |  RV_CPU   |Core    |   972|
+|3     |    dc0    |Decode  |   498|
+|4     |      ide0 |ID_EX   |   338|
+|5     |      rf0  |RegFile |   160|
+|6     |    ex0    |Execute |    74|
+|7     |      alu0 |ALU     |    20|
+|8     |      em0  |EX_MEM  |    54|
+|9     |    fh0    |Fetch   |    67|
+|10    |      ifd0 |IF_ID   |    45|
+|11    |      pc0  |PC      |    22|
+|12    |    mem0   |MEM     |   333|
+|13    |      mw0  |MEM_WB  |   325|
+|14    |      tc0  |TC      |     8|
++------+-----------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 819.715 ; gain = 560.313
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 857.426 ; gain = 598.230
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 11 critical warnings and 1240 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:50 . Memory (MB): peak = 819.715 ; gain = 212.551
-Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 819.715 ; gain = 560.313
+Synthesis finished with 0 errors, 0 critical warnings and 1442 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:52 . Memory (MB): peak = 857.426 ; gain = 244.211
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 857.426 ; gain = 598.230
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 129 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-17] Analyzing 170 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 64 instances were transformed.
-  LD => LDCE: 32 instances
-  LDC => LDCE: 32 instances
+  A total of 128 instances were transformed.
+  LDC => LDCE: 128 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-211 Infos, 434 Warnings, 11 Critical Warnings and 0 Errors encountered.
+115 Infos, 302 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:01:03 . Memory (MB): peak = 819.715 ; gain = 573.320
-INFO: [Common 17-1381] The checkpoint 'C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.runs/synth_1/Core.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file Core_utilization_synth.rpt -pb Core_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 819.715 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Dec  1 02:12:42 2018...
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:05 . Memory (MB): peak = 857.426 ; gain = 611.051
+INFO: [Common 17-1381] The checkpoint 'C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.runs/synth_1/thinpad_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file thinpad_top_utilization_synth.rpt -pb thinpad_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 857.426 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  1 21:45:10 2018...

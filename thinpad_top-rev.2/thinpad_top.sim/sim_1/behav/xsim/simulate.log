@@ -1,3 +1,16 @@
 Vivado Simulator 2018.1
 Time resolution is 1 ps
-Stopped at time : 0 fs : File "C:/Users/blade/Desktop/thinpad_top-rev.2/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/inst_rom.v" Line 30
+[        0 ns]  --- Device is Busy  (start up time) --- 
+WARNING: file /tmp/main.bin could not be opened
+Failed to open BaseRAM init file
+BaseRAM Init Size(words):           0
+WARNING: file /tmp/eram.bin could not be opened
+Failed to open ExtRAM init file
+ExtRAM Init Size(words):           0
+[        0 ns]  ASynchronous Read Mode
+[        0 ns]  VDD Voltage is OK
+[        0 ns]  VDDQ Voltage is OK
+[        0 ns] Inizialize the Memory to default value
+WARNING: file /tmp/kernel.elf could not be opened
+[        0 ns] Warning: File: /tmp/kernel.elf not found
+[       60 ns]  --- Device is Ready (end of start-up time) --- 

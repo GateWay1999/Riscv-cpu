@@ -1,7 +1,65 @@
 Vivado Simulator 2018.1
 Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 1e0777dd008c45fcbaffd6b18f2c35e9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot SOPC_TB_behav xil_defaultlib.SOPC_TB xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Vivado/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 1e0777dd008c45fcbaffd6b18f2c35e9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-727] function getTime has no return value assignment [C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sim_1/new/include/TimingData.h:182]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.Ins_Mem
+Compiling module xil_defaultlib.IF_ID
+Compiling module xil_defaultlib.Fetch
+Compiling module xil_defaultlib.RegFile
+Compiling module xil_defaultlib.Imm_Gen
+Compiling module xil_defaultlib.CHFU
+Compiling module xil_defaultlib.Compare
+Compiling module xil_defaultlib.Control
+Compiling module xil_defaultlib.HDU
+Compiling module xil_defaultlib.ID_EX
+Compiling module xil_defaultlib.Decode
+Compiling module xil_defaultlib.FU
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.SCU
+Compiling module xil_defaultlib.ALU_Control
+Compiling module xil_defaultlib.EX_MEM
+Compiling module xil_defaultlib.Execute
+Compiling module xil_defaultlib.Data_Mem
+Compiling module xil_defaultlib.TC
+Compiling module xil_defaultlib.MEM_WB
+Compiling module xil_defaultlib.MEM
+Compiling module xil_defaultlib.WB
+Compiling module xil_defaultlib.Core
+Compiling module xil_defaultlib.thinpad_top
+Compiling module xil_defaultlib.clock
+Compiling module xil_defaultlib.sram_model
+Compiling module xil_defaultlib.DataErrorModule
+Compiling module xil_defaultlib.CUIdecoder1_2
+Compiling module xil_defaultlib.CUIdecoder_Busy1_1
+Compiling module xil_defaultlib.CUIdecoder2_2
+Compiling module xil_defaultlib.KernelModule_1
+Compiling module xil_defaultlib.ReadModule_1
+Compiling module xil_defaultlib.OutputBufferModule_1
+Compiling module xil_defaultlib.StatusRegModule_1
+Compiling module xil_defaultlib.MemoryModule(FILENAME_MEM="/tmp/...
+Compiling module xil_defaultlib.ProgramModule_1
+Compiling module xil_defaultlib.BuffEnhancedFactProgramModule_1
+Compiling module xil_defaultlib.ProtectRegModule_1
+Compiling module xil_defaultlib.EraseModule_1
+Compiling module xil_defaultlib.BlankCheckModule_1
+Compiling module xil_defaultlib.BlockLockModule_1
+Compiling module xil_defaultlib.ProgramBufferModule_1
+Compiling module xil_defaultlib.SignatureModule_1
+Compiling module xil_defaultlib.CFIqueryModule_1
+Compiling module xil_defaultlib.ConfigRegModule_1
+Compiling module xil_defaultlib.BurstModule_1
+Compiling module xil_defaultlib.BankLib
+Compiling module xil_defaultlib.TimingDataModule
+Compiling module xil_defaultlib.TimingLibModule_1
+Compiling module xil_defaultlib.DebugModule
+Compiling module xil_defaultlib.x28fxxxp30(FILENAME_MEM="/tmp/ke...
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav

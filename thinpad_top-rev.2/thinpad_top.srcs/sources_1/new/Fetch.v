@@ -21,15 +21,15 @@
 `include "define.v"
 
 module Fetch(
-    input wire clk,
-    input wire rst,
-    input wire pc_write_i,
-    input wire pc_select_i,
-    input wire[`InstAddrBus] pc_branch_i,
-    input wire if_flush,
-    input wire ifid_write,
-    input wire stop_pc,
-    input wire stop_IFID,
+    input wire clk,                             // CPU 时钟
+    input wire rst,                             // CPU 复位
+    input wire pc_write_i,                      // PC 写控制
+    input wire pc_select_i,                     // PC+4 分支选择
+    input wire[`InstAddrBus] pc_branch_i,       // 跳转地址
+    input wire if_flush,                        // 清除IFID
+    input wire ifid_write,                      // IFID 写控制
+    input wire stop_pc,                         // PC 写控制
+    input wire stop_IFID,                       // IFID 写控制
     
     output wire[`InstAddrBus] pc,
     output wire[`InstBus] inst_data

@@ -28,9 +28,8 @@ module MEM_WB(
     input wire[31:0] load_data_i,
     input wire[31:0] ALU_result_i,
     input wire[4:0] rd_i,
-    input wire SPC_i,
+    input wire stop_MEMWB,
 
-    output reg SPC_o,
     output reg MEMtoReg_o,
     output reg Regwrite_o,
     output reg[31:0] load_data_o,
@@ -40,19 +39,19 @@ module MEM_WB(
 
     always @ (posedge clk) begin
         if (rst == `RSToff) begin
-            MEMtoReg_o <= MEMtoReg_i;
-            Regwrite_o <= Regwrite_i;
-            load_data_o<= load_data_i;
-            ALU_result_o<= ALU_result_i;
-            rd_o <= rd_i;
-            SPC_o <= SPC_i;
+            if (stop_MEMWB == `Falsev)begin
+                MEMtoReg_o <= MEMtoReg_i;
+                Regwrite_o <= Regwrite_i;
+                load_data_o<= load_data_i;
+                ALU_result_o<= ALU_result_i;
+                rd_o <= rd_i;
+            end
         end else begin
             MEMtoReg_o <= `Falsev;
             Regwrite_o <= `Falsev;
             load_data_o<= `SetZero;
             ALU_result_o<= `SetZero;
             rd_o<= 5'b00000;
-            SPC_o <= 1'b0;
         end
     end
 endmodule

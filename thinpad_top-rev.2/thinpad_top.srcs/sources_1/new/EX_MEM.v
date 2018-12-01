@@ -31,9 +31,8 @@ module EX_MEM(
     input wire              MEMtoReg,
     input wire              Regwrite,
     input wire[4:0]         funct,
-    input wire              SPC_i,
+    input wire              stop_EXMEM,
     
-    output reg             SPC_o,
     output reg[31:0]       result_o,
     output reg[31:0]       store_data_o,
     output reg[`RegAddrBus] rd_o,
@@ -46,15 +45,16 @@ module EX_MEM(
 
     always @ (posedge clk) begin
         if (rst == `RSToff) begin
-            result_o <= result;
-            store_data_o <= store_data;
-            rd_o <= rd;
-            MEMwrite_o <= MEMwrite;
-            MEMread_o <= MEMread;
-            MEMtoReg_o <= MEMtoReg;
-            Regwrite_o <= Regwrite;
-            funct_o <= funct;
-            SPC_o <= SPC_i;
+            if ( stop_EXMEM == `Falsev) begin
+                result_o <= result;
+                store_data_o <= store_data;
+                rd_o <= rd;
+                MEMwrite_o <= MEMwrite;
+                MEMread_o <= MEMread;
+                MEMtoReg_o <= MEMtoReg;
+                Regwrite_o <= Regwrite;
+                funct_o <= funct;
+            end
         end else begin
             result_o <= `SetZero;
             store_data_o <= `SetZero;
@@ -64,7 +64,6 @@ module EX_MEM(
             MEMtoReg_o <= `Falsev;
             Regwrite_o <= `WriteDisable;
             funct_o <= 5'b00000;
-            SPC_o <= 1'b0;
         end
     end
 endmodule

@@ -34,11 +34,13 @@ module PC(
         if (rst == `RSTon) begin
             pc <= `SetZero;
         end else if(rst == `RSToff) begin
-            if (pc_write == `WriteEnable && stop_pc == `Falsev) begin
-                if (pc_select == `TakeBranch) begin
-                    pc <= pc_branch;
-                end else if (pc_select == `NotTake) begin
-                    pc <= pc + 4'h4;
+            if (stop_pc == `Falsev) begin
+                if ((pc_write == `WriteEnable)) begin
+                    if (pc_select == `TakeBranch) begin
+                        pc <= pc_branch;
+                    end else if (pc_select == `NotTake) begin
+                        pc <= pc + 4'h4;
+                    end
                 end
             end
         end else begin

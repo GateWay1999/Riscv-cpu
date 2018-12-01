@@ -55,6 +55,7 @@ module Core(
     wire stop_IFID;
     wire clear_IDEX;
     wire SPC_o;
+    wire stop_MEMWB;
     // MEM-WB
     wire MEMtoReg_MEM;
     wire[31:0] load_data,ALU_result;
@@ -96,6 +97,7 @@ module Core(
         .stop_pc(stop_pc),
         .stop_IFID(stop_IFID),
         .clear_IDEX(clear_IDEX),
+        .stop_MEMWB(stop_MEMWB),
         .SPC(SPC_o),
         .MEMread_o(MEMread_EX),.MEMwrite_o(MEMwrite_EX),
         .MEMtoReg_o(MEMtoReg_EX),.Regwrite_o(Regwrite_EX),
@@ -104,7 +106,7 @@ module Core(
     );
     
     MEM mem0(
-        .clk(CLOCK_50), .rst(rst),.funct(funct_EX),
+        .clk(CLOCK_50), .rst(rst),.funct(funct_EX),.stop_MEMWB(stop_MEMWB),
         .MEMtoReg(MEMtoReg_EX),.Regwrite(Regwrite_EX),
         .MEMwrite(MEMwrite_EX),.MEMread(MEMread_EX),
         .store_data(store_data),.ALU_result(result),

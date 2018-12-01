@@ -27,7 +27,7 @@ module Ins_Mem(
     // 定义指令存储器大小
     reg[`InstBus] inst_mem[0:`InstMemNum-1];
     // 使用文件初始化指令存储器
-    initial $readmemh ("D:/Vivado/RV32CPU/RiscV_CPU/RiscV_CPU.srcs/sources_1/new/inst_rom.data", inst_mem);
+    initial $readmemh ("C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/inst_rom.data", inst_mem);
     // 依据输入地址，提供数据
     assign inst = inst_mem[addr[`InstMemNumLog2+1:2]]; 
 endmodule

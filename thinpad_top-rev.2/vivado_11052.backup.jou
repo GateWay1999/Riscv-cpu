@@ -2,14 +2,17 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri Nov 30 19:26:59 2018
-# Process ID: 36444
+# Start of session at: Sat Dec  1 17:29:27 2018
+# Process ID: 11052
 # Current directory: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15764 C:\Users\blade\Desktop\Riscv-cpu\thinpad_top-rev.2\thinpad_top.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent32464 C:\Users\blade\Desktop\Riscv-cpu\thinpad_top-rev.2\thinpad_top.xpr
 # Log file: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/vivado.log
 # Journal file: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.xpr
+open_hw
 update_compile_order -fileset sources_1
-import_files
+connect_hw_server
+disconnect_hw_server localhost:3121
+connect_hw_server

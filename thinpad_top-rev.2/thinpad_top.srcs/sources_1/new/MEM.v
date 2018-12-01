@@ -37,6 +37,7 @@ module MEM(
     input wire uart_dataready,    //串口数据准备好
     input wire uart_tbre,         //发送数据标志
     input wire uart_tsre,         //数据发送完毕标志
+    input wire stop_MEMWB,
 
     output wire uart_rdn,         //读串口信号，低有效
     output wire uart_wrn,         //写串口信号，低有效  
@@ -78,8 +79,7 @@ module MEM(
         .tbre(uart_tbre),
         .tsre(uart_tsre),
         .data_ready(uart_dataready),
-        .base_ram_i(base_ram_data),            
-        .base_ram_o(base_ram_data),           
+        .base_ram_data(base_ram_data),                 
         .base_ram_ce_n(base_ram_ce_n),
         .uart_wrn(uart_wrn),
         .uart_rdn(uart_rdn),
@@ -89,9 +89,9 @@ module MEM(
     MEM_WB mw0(
         .clk(clk), .rst(rst),
         .MEMtoReg_i(MEMtoReg), .Regwrite_i(Regwrite),
-        .load_data_i(load_data),.ALU_result_i(ALU_result),.SPC_i(SPC_i),
+        .load_data_i(load_data),.ALU_result_i(ALU_result),.stop_MEMWB(stop_MEMWB),
         .rd_i(rd_i),.MEMtoReg_o(MEMtoReg_o),
         .Regwrite_o(Regwrite_o),.load_data_o(load_data_o),
-        .ALU_result_o(ALU_result_o),.rd_o(rd_o),.SPC_o(SPC_o)
+        .ALU_result_o(ALU_result_o),.rd_o(rd_o)
     );
 endmodule
