@@ -23,16 +23,16 @@
 module Data_Mem(
     input wire clk,
     input wire rst,
-    input wire[31:0] ac_addr,               // 32Î»Òª·ÃÎÊµÄµØÖ·
-    input wire[31:0] store_data,            //  32Î»Òª´æ´¢µÄÊı¾İ
-    input wire MEMwrite,                    // Ğ´Ê¹ÄÜ
-    input wire MEMread,                     // ¶ÁÊ¹ÄÜ
-    /* funct µÄ [2:0] ÓÃÀ´·Ö±æ·ÃÎÊ·½Ê½
-        OB      3'b000      ¶ÁÈ¡»ò´æÈë 8Î»  ¶ÁÈ¡µÄ»°×ö·ûºÅÀ©Õ¹µ½32Î»  ´æÈë²»ÓÃÀ©Õ¹Ö±½Ó´æÈë¶ÔÓ¦Î»Êı
-        OH      3'b001      ¶ÁÈ¡»ò´æÈë 16Î» ¶ÁÈ¡µÄ»°×ö·ûºÅÀ©Õ¹µ½32Î»  ´æÈë²»ÓÃÀ©Õ¹Ö±½Ó´æÈë¶ÔÓ¦Î»Êı
-        OW      3'b010      ¶ÁÈ¡»ò´æÈë 32Î» ´æÈë²»ÓÃÀ©Õ¹Ö±½Ó´æÈë¶ÔÓ¦Î»Êı
-        LBU     3'b011      ¶ÁÈ¡ Ò»¸ö×Ö½Ú ×öÁãÀ©Õ¹µ½32Î»
-        LHU     3'b100      ¶ÁÈ¡ Á½¸ö×Ö½Ú ×öÁãÀ©Õ¹µ½32Î»
+    input wire[31:0] ac_addr,               // 32ä½è¦è®¿é—®çš„åœ°å€
+    input wire[31:0] store_data,            //  32ä½è¦å­˜å‚¨çš„æ•°æ®
+    input wire MEMwrite,                    // å†™ä½¿èƒ½
+    input wire MEMread,                     // è¯»ä½¿èƒ½
+    /* funct çš„ [2:0] ç”¨æ¥åˆ†è¾¨è®¿é—®æ–¹å¼
+        OB      3'b000      è¯»å–æˆ–å­˜å…¥ 8ä½  è¯»å–çš„è¯åšç¬¦å·æ‰©å±•åˆ°32ä½  å­˜å…¥ä¸ç”¨æ‰©å±•ç›´æ¥å­˜å…¥å¯¹åº”ä½æ•°
+        OH      3'b001      è¯»å–æˆ–å­˜å…¥ 16ä½ è¯»å–çš„è¯åšç¬¦å·æ‰©å±•åˆ°32ä½  å­˜å…¥ä¸ç”¨æ‰©å±•ç›´æ¥å­˜å…¥å¯¹åº”ä½æ•°
+        OW      3'b010      è¯»å–æˆ–å­˜å…¥ 32ä½ å­˜å…¥ä¸ç”¨æ‰©å±•ç›´æ¥å­˜å…¥å¯¹åº”ä½æ•°
+        LBU     3'b011      è¯»å– ä¸€ä¸ªå­—èŠ‚ åšé›¶æ‰©å±•åˆ°32ä½
+        LHU     3'b100      è¯»å– ä¸¤ä¸ªå­—èŠ‚ åšé›¶æ‰©å±•åˆ°32ä½
     */
     input wire[4:0] funct,
     inout wire[31:0] base_ram_data,
@@ -44,4 +44,120 @@ module Data_Mem(
     output wire base_ram_we_n,
     output wire[31:0] load_data
 );
+
+    reg[31:0] temp_ram_data;
+    reg is_write = `Falsev;
+    
+    assign base_ram_data = (is_write == `Truev) ? temp_ram_data : 32'bz;
+    
+    always @ (*) begin
+        if(MEMwrite == `Truev)
+            is_write <= `Truev;
+        else
+            is_write <= `Falsev;
+    end
+    
+    always @ (*) begin
+        if (MEMread == `Truev) begin //è¯»
+            base_ram_ce_n <= `Lowv;//ç‰‡é€‰ä½
+            base_ram_oe_n <= `Lowv;//è¯»ä½¿èƒ½ä½
+            base_ram_we_n <= `Highv;//å†™ä½¿èƒ½é«˜
+            base_ram_addr <= ac_addr[21:2];//èµ‹åœ°å€
+            base_ram_be_n <= 4'b0000;//REMå­—èŠ‚ä½¿èƒ½å››ä½éƒ½ä½
+        end
+        else if (MEMwrite == `Truev) begin //å†™
+            base_ram_ce_n <= `Lowv;//ç‰‡é€‰ä½
+            base_ram_oe_n <= `Highv;//è¯»ä½¿èƒ½é«˜
+            base_ram_we_n <= `Lowv;//å†™ä½¿èƒ½ä½
+            base_ram_addr <= ac_addr[21:2];//èµ‹åœ°å€
+            //ä¸‹é¢ç¡®å®š base_ram_be_nå››ä½çš„å€¼
+            case(funct)
+                `OB : begin
+                    base_ram_be_n <= {(~ac_addr[1])|(~ac_addr[0]), (~ac_addr[1])|(ac_addr[0]), (ac_addr[1])|(~ac_addr[0]), (ac_addr[1])|(ac_addr[0])};
+                end
+                `OH : begin
+                    base_ram_be_n <= {(~ac_addr[1]), (~ac_addr[1]),(ac_addr[1]),(ac_addr[1])};
+                end
+                `OW : begin
+                    base_ram_be_n <= 4'b0000;
+                end
+                default : begin 
+                    base_ram_be_n <= 4'b1111;
+                end
+            endcase
+        end
+        else begin //ä¸è¯»ä¹Ÿä¸å†™ï¼Œè®¿å­˜ä¸å·¥ä½œ 
+             base_ram_ce_n <= `Highv;//ç‰‡é€‰é«˜
+             base_ram_oe_n <= `Highv;//è¯»ä½¿èƒ½é«˜
+             base_ram_we_n <= `Highv;//å†™ä½¿èƒ½é«˜
+        end
+    end
+     
+    always @ (negedge clk) begin //ä¸‹é™æ²¿å¼€å§‹å†™
+        if(MEMwrite == `Truev) begin //å¦‚æœæ˜¯å†™
+            //is_write <= `Truev;
+            temp_ram_data <= store_data;
+        end
+    end
+ 
+    always @ (*) begin //è¯»
+        if(MEMread == `Truev) begin
+            //is_write <= `Falsev;
+            case(funct)
+                `OB : begin
+                    case(ac_addr[1:0])
+                        2'b00 : begin
+                            load_data <= {{24{base_ram_data[7]}}, base_ram_data[7:0]};
+                        end
+                        2'b01: begin
+                            load_data <= {{24{base_ram_data[15]}}, base_ram_data[15:8]};
+                        end
+                        2'b10: begin
+                            load_data <= {{24{base_ram_data[23]}}, base_ram_data[23:16]};
+                        end
+                        2'b11: begin
+                            load_data <= {{24{base_ram_data[31]}}, base_ram_data[31:24]};
+                        end
+                    endcase
+                end
+                `OH : begin
+                    if(ac_addr[1] == 1'b0) begin
+                        load_data <= {{16{base_ram_data[15]}}, base_ram_data[15:0]};
+                    end
+                    else begin
+                        load_data <= {{16{base_ram_data[31]}}, base_ram_data[31:16]};
+                    end
+                end
+                `OW : begin
+                    //base_ram_addr = ac_addr[21:2];
+                    load_data <= base_ram_data;
+                end
+                `LBU : begin
+                    case (ac_addr[1:0])
+                        2'b00 : begin
+                            load_data <= {24'b0, base_ram_data[7:0]};
+                        end
+                        2'b01 : begin
+                            load_data <= {24'b0, base_ram_data[15:8]};
+                        end
+                        2'b10 : begin
+                            load_data <= {24'b0, base_ram_data[23:16]};
+                        end
+                        2'b11 : begin
+                            load_data <= {24'b0, base_ram_data[31:24]};
+                        end
+                    endcase
+                end
+                `LHU : begin
+                    if(ac_addr[1] == 1'b0) begin
+                        load_data <= {16'b0, base_ram_data[15:0]};
+                    end
+                    else begin
+                        load_data <= {16'b0, base_ram_data[31:16]};
+                    end
+                end
+            endcase
+        end
+    end
+    
 endmodule
