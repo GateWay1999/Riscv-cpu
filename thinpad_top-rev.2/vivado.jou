@@ -2,13 +2,164 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sat Dec  1 22:40:10 2018
-# Process ID: 6196
+# Start of session at: Sun Dec  2 08:59:02 2018
+# Process ID: 12848
 # Current directory: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2472 C:\Users\blade\Desktop\Riscv-cpu\thinpad_top-rev.2\thinpad_top.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13032 C:\Users\blade\Desktop\Riscv-cpu\thinpad_top-rev.2\thinpad_top.xpr
 # Log file: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/vivado.log
 # Journal file: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+source tb.tcl
+relaunch_sim
+run 1000 ns
+relaunch_sim
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+relaunch_sim
+run 1000 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1000 ns
+relaunch_sim
+relaunch_sim
+run 1000 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+run 1000 ns
+run 1000 ns
+run 1000 ns
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+close_sim

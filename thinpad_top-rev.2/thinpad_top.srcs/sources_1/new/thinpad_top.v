@@ -83,7 +83,6 @@ module thinpad_top(
     initial begin
         rst = 1'b1;
         #50 rst= 1'b0;
-        #3000 $stop;
     end
     
     Core RV_CPU(

@@ -75,7 +75,7 @@ module ALU_Control(
                 end else if (funct[2:0] == 3'b110) begin // OR
                     ALUcode <= `ALU_OR;
                 end else if (funct[2:0] == 3'b111) begin // AND
-                    ALUcode <= `ALU_ADD;
+                    ALUcode <= `ALU_AND;
                 end else begin
                     ALUcode <= `ALU_NOP;
                 end

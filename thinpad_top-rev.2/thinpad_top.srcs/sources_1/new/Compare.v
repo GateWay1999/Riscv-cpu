@@ -41,14 +41,14 @@ module Compare(
                         if (rs1[31] != rs2[31]) begin
                             jump <= rs1[31] ? 1'b1 : 1'b0;
                         end else begin
-                            jump <= (rs1 - rs2) ? 1'b1 : 1'b0;
+                            jump <= (rs1 < rs2) ? 1'b1 : 1'b0;
                         end
                     end
                     `BGE: begin
                         if (rs1[31] != rs2[31]) begin
                             jump <= rs1[31] ? 1'b0 : 1'b1;
                         end else begin
-                            jump <= (rs1 - rs2) ? 1'b0 : 1'b1;
+                            jump <= (rs1 < rs2) ? 1'b0 : 1'b1;
                         end
                     end
                     `BLTU: begin

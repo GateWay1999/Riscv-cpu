@@ -87,7 +87,7 @@ module Core(
         .MEMread_i(MEMread),.MEMwrite_i(MEMwrite),
         .MEMtoReg_i(MEMtoReg),.Regwrite_i(Regwrite),
         .Regwrite_WB(Regwrite_MEM_WBtoID),
-        .read_data_1(read_reg_1), .read_data_2(read_reg_1),
+        .read_data_1(read_reg_1), .read_data_2(read_reg_2),
         .imm_num(imm_num),.funct(funct),
         .rs1(rs1),.rs2(rs2),
         .rd_i(rd),.rd_WB(write_reg),

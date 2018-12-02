@@ -91,12 +91,12 @@ module Decode(
     );
     
     Imm_Gen ig0(
-        .rst(rst), .imm_i(imm),
+        .rst(rst), .imm_i(imm),.inst(inst[6:0]),
         .pc_now(pc), .imm_o(imm_num_o),
         .branch_pc(branch_pc)
     );
     wire rs1_c,rs2_c;
-    wire[31:0] change;
+    wire[31:0] change1,change2;
     CHFU chf0(
        .rst(rst),
        .rs1(inst[19:15]),.rs2(inst[24:20]),
@@ -105,12 +105,12 @@ module Decode(
        .Regwrite_WB(Regwrite_i),.rd_WB(write_reg),.write_data(write_data),
    
        .rs1_change(rs1_c),.rs2_change(rs2_c),
-       .change_data(change)
+       .change1_data(change1),.change2_data(change2)
    );
     reg[31:0] read_f1,read_f2;
     always @ (*) begin
-        read_f1 <= (rs1_c) ? change : read1;
-        read_f2 <= (rs2_c) ? change : read2;
+        read_f1 <= (rs1_c) ? change1 : read1;
+        read_f2 <= (rs2_c) ? change2 : read2;
     end
     
     Compare comp0(
@@ -130,7 +130,7 @@ module Decode(
     
     HDU hdu0(
         .rst(rst),
-        .rd(rd), .inst({inst[6:2],{inst[19:15],inst[11:7]}}),
+        .rd(rd), .inst({inst[6:2],{inst[19:15],inst[24:20]}}),
         .MEMread_IDEX(MEMread),.MEMread_EXMEM(MEMread_EXMEM),.Regwrite_IDEX(Regwrite_o), .HDU_ct(HDU_C),
         .pc_write(pc_write), .if_id_write(if_id_write)
     );
