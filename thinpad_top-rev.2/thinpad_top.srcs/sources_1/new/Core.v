@@ -24,17 +24,24 @@ module Core(
     input wire CLOCK_50,
     input wire rst,
     inout wire[31:0] base_ram_data,
-    input wire uart_dataready,    //´®¿ÚÊı¾İ×¼±¸ºÃ
-    input wire uart_tbre,         //·¢ËÍÊı¾İ±êÖ¾
-    input wire uart_tsre,         //Êı¾İ·¢ËÍÍê±Ï±êÖ¾
+    input wire uart_dataready,    //ä¸²å£æ•°æ®å‡†å¤‡å¥½
+    input wire uart_tbre,         //å‘é€æ•°æ®æ ‡å¿—
+    input wire uart_tsre,         //æ•°æ®å‘é€å®Œæ¯•æ ‡å¿—
     
-    output wire uart_rdn,         //¶Á´®¿ÚĞÅºÅ£¬µÍÓĞĞ§
-    output wire uart_wrn,         //Ğ´´®¿ÚĞÅºÅ£¬µÍÓĞĞ§
+    output wire uart_rdn,         //è¯»ä¸²å£ä¿¡å·ï¼Œä½æœ‰æ•ˆ
+    output wire uart_wrn,         //å†™ä¸²å£ä¿¡å·ï¼Œä½æœ‰æ•ˆ
     output wire[19:0] base_ram_addr,
     output wire[3:0] base_ram_be_n,
     output wire base_ram_ce_n,
     output wire base_ram_oe_n,
-    output wire base_ram_we_n
+    output wire base_ram_we_n,
+    
+    inout wire[31:0] ext_ram_data,
+    output wire[19:0] ext_ram_addr,
+    output wire[3:0] ext_ram_be_n,
+    output wire ext_ram_ce_n,
+    output wire ext_ram_oe_n,
+    output wire ext_ram_we_n
 );
     // IF-ID
     wire if_flush, ifid_write,pc_write,pc_select;
@@ -62,7 +69,11 @@ module Core(
     Fetch fh0(
         .clk(CLOCK_50), .rst(rst),.if_flush(if_flush),.ifid_write(ifid_write),
         .pc_write_i(pc_write),.pc_select_i(pc_select),.pc_branch_i(pc_branch), .stop_pc(stop_pc),.stop_IFID(stop_IFID),
-        // Êä³ö
+        
+        .ext_ram_data(ext_ram_data),
+                 .ext_ram_addr(ext_ram_addr), .ext_ram_be_n(ext_ram_be_n), .ext_ram_ce_n(ext_ram_ce_n),
+                 .ext_ram_oe_n(ext_ram_oe_n), .ext_ram_we_n(ext_ram_we_n),
+        // è¾“å‡º
         .pc(pc), .inst_data(instruction)
     );
     
@@ -71,7 +82,7 @@ module Core(
         .pc(pc),.inst(instruction),
         .Regwrite_i(Regwrite_MEM_WBtoID),.write_data(write_data),.write_reg(write_reg),.MEMread_EXMEM(MEMread_EX),
         .Regwrite_MEM(Regwrite_EX),.rd_MEM(rd_EX),.ALU_result(result),.clear_IDEX(clear_IDEX),
-        // Êä³ö
+        // è¾“å‡º
         .pc_write(pc_write),.if_id_write(ifid_write),.if_flush(if_flush),.branch_pc(pc_branch),
         .Regwrite_o(Regwrite),.MEMread(MEMread),
         .MEMwrite(MEMwrite),.MEMtoReg(MEMtoReg),.ALUop(ALUop),
@@ -129,7 +140,7 @@ module Core(
     
     WB wb0(
         .MEMtoReg(MEMtoReg_MEM),.load_data(load_data),.ALU_result(ALU_result),
-        // Êä³ö
+        // è¾“å‡º
         .write_data(write_data)
     );
 endmodule
