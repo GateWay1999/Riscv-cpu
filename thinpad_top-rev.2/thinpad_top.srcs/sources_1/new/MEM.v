@@ -44,7 +44,7 @@ module MEM(
     output wire SPC_o,    
     output wire[19:0] base_ram_addr,
     output wire[3:0] base_ram_be_n,
-    output wire base_ram_ce_n,
+    output reg base_ram_ce_n,
     output wire base_ram_oe_n,
     output wire base_ram_we_n,
     output wire MEMtoReg_o,
@@ -53,38 +53,65 @@ module MEM(
     output wire[31:0] ALU_result_o,
     output wire[4:0] rd_o
 );
-    wire[31:0] load_data;
+    reg[31:0] load_data;
+    wire[31:0] memload;
+    reg memread;
+    reg memwrite;
+    reg tcread;
+    reg tcwrite;
+    always @ (*) begin
+        if (SPC_i == `Truev) begin
+            base_ram_ce_n <= `Highv;
+            memread <= `Falsev;
+            memwrite <= `Falsev;
+            tcread <= MEMread;
+            tcwrite <= MEMwrite;
+        end else begin
+            base_ram_ce_n <= `Lowv;
+            memread <= MEMread;
+            memwrite <= MEMwrite; 
+            tcread <= `Falsev;
+            tcwrite <= `Falsev;
+        end
+    end
+ 
     Data_Mem dm0(
         .clk(clk),
         .rst(rst),
         .funct(funct),
         .ac_addr(ALU_result),
         .store_data(store_data),
-        .MEMwrite(MEMwrite),
-        .MEMread(MEMread),
-        .load_data(load_data),
+        .MEMwrite(memwrite),
+        .MEMread(memread),
+        .load_data(memload),
         .base_ram_data(base_ram_data),
         .base_ram_addr(base_ram_addr),
-        .base_ram_be_n(base_ram_be_n),  
-        .base_ram_ce_n(base_ram_ce_n),       
+        .base_ram_be_n(base_ram_be_n),      
         .base_ram_oe_n(base_ram_oe_n),      
         .base_ram_we_n(base_ram_we_n)
     );
     
+    wire[7:0] read_data;
+    
     TC tc0(
         .clk(clk2),
         .SPC(SPC_i),
-        .MEMwrite(MEMwrite),
-        .MEMread(MEMread),
+        .MEMwrite(tcwrite),
+        .MEMread(tcread),
         .tbre(uart_tbre),
         .tsre(uart_tsre),
+        .send_data(store_data[7:0]),
         .data_ready(uart_dataready),
         .base_ram_data(base_ram_data),                 
-        .base_ram_ce_n(base_ram_ce_n),
         .uart_wrn(uart_wrn),
         .uart_rdn(uart_rdn),
+        .read_data(read_data[7:0]),
         .SPC_o(SPC_o)
     );
+    
+    always @ (*) begin
+        load_data <= (SPC_i) ? { 24'h000000 ,read_data[7:0]} : memload;
+    end
     
     MEM_WB mw0(
         .clk(clk), .rst(rst),

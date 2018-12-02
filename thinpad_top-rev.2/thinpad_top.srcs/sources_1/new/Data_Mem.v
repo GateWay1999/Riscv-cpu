@@ -23,26 +23,25 @@
 module Data_Mem(
     input wire clk,
     input wire rst,
-    input wire[31:0] ac_addr,               // 32位要访问的地址
-    input wire[31:0] store_data,            //  32位要存储的数据
-    input wire MEMwrite,                    // 写使能
-    input wire MEMread,                     // 读使能
-    /* funct 的 [2:0] 用来分辨访问方式
-        OB      3'b000      读取或存入 8位  读取的话做符号扩展到32位  存入不用扩展直接存入对应位数
-        OH      3'b001      读取或存入 16位 读取的话做符号扩展到32位  存入不用扩展直接存入对应位数
-        OW      3'b010      读取或存入 32位 存入不用扩展直接存入对应位数
-        LBU     3'b011      读取 一个字节 做零扩展到32位
-        LHU     3'b100      读取 两个字节 做零扩展到32位
+    input wire[31:0] ac_addr,               // 32位要访问的地�?
+    input wire[31:0] store_data,            //  32位要存储的数�?
+    input wire MEMwrite,                    // 写使�?
+    input wire MEMread,                     // 读使�?
+    /* funct �? [2:0] 用来分辨访问方式
+        OB      3'b000      读取或存�? 8�?  读取的话做符号扩展到32�?  存入不用扩展直接存入对应位数
+        OH      3'b001      读取或存�? 16�? 读取的话做符号扩展到32�?  存入不用扩展直接存入对应位数
+        OW      3'b010      读取或存�? 32�? 存入不用扩展直接存入对应位数
+        LBU     3'b011      读取 �?个字�? 做零扩展�?32�?
+        LHU     3'b100      读取 两个字节 做零扩展�?32�?
     */
     input wire[4:0] funct,
     inout wire[31:0] base_ram_data,
         
-    output wire[19:0] base_ram_addr,
-    output wire[3:0] base_ram_be_n,
-    output wire base_ram_ce_n,
-    output wire base_ram_oe_n,
-    output wire base_ram_we_n,
-    output wire[31:0] load_data
+    output reg [19:0] base_ram_addr,
+    output reg [3:0] base_ram_be_n,
+    output reg base_ram_oe_n,
+    output reg base_ram_we_n,
+    output reg [31:0] load_data
 );
 
     reg[31:0] temp_ram_data = 32'b00000000000000000000000000000000;
@@ -66,19 +65,19 @@ module Data_Mem(
     
     
     always @ (*) begin
-        if (MEMread == `Truev) begin //读
-            base_ram_ce_n <= `Lowv;//片选低
+        if (MEMread == `Truev) begin //�?
+            //base_ram_ce_n <= `Lowv;//片�?�低
             base_ram_oe_n <= `Lowv;//读使能低
             //base_ram_we_n <= `Highv;//写使能高
-            base_ram_addr <= ac_addr[21:2];//赋地址
+            base_ram_addr <= ac_addr[21:2];//赋地�?
             base_ram_be_n <= 4'b0000;//REM字节使能四位都低
         end
-        else if (MEMwrite == `Truev) begin //写
-            base_ram_ce_n <= `Lowv;//片选低
+        else if (MEMwrite == `Truev) begin //�?
+            //base_ram_ce_n <= `Lowv;//片�?�低
             base_ram_oe_n <= `Highv;//读使能高
             //base_ram_we_n <= `Lowv;//写使能低
-            base_ram_addr <= ac_addr[21:2];//赋地址
-            //下面确定 base_ram_be_n四位的值
+            base_ram_addr <= ac_addr[21:2];//赋地�?
+            //下面确定 base_ram_be_n四位的�??
             case(funct)
                 `OB : begin
                     base_ram_be_n <= {(~ac_addr[1])|(~ac_addr[0]), (~ac_addr[1])|(ac_addr[0]), (ac_addr[1])|(~ac_addr[0]), (ac_addr[1])|(ac_addr[0])};
@@ -94,8 +93,8 @@ module Data_Mem(
                 end
             endcase
         end
-        else begin //不读也不写，访存不工作 
-             base_ram_ce_n <= `Highv;//片选高
+        else begin //不读也不写，访存不工�? 
+             //base_ram_ce_n <= `Highv;//片�?�高
              base_ram_oe_n <= `Highv;//读使能高
              //base_ram_we_n <= `Highv;//写使能高
         end
@@ -112,7 +111,7 @@ module Data_Mem(
         
     end
  
-    always @ (*) begin //读
+    always @ (*) begin //�?
         if(MEMread == `Truev) begin
             //is_write <= `Falsev;
             case(funct)

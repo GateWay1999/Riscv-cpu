@@ -68,7 +68,7 @@ module Control(
                     MEMwrite <= `Truev;
                     MEMtoReg <= `Falsev;
                     ALUop <= `ALU_M;
-                    ALUsrc <= `RegSrc;
+                    ALUsrc <= `ImmSrc;
                     Regwrite <= `Falsev;
                 end else if (inst[6:5] == 2'b11) begin      // Ìø×ª
                     MEMread <= `Falsev;

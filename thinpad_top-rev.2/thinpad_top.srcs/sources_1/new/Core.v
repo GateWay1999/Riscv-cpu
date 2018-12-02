@@ -22,14 +22,15 @@
 
 module Core(
     input wire CLOCK_50,
+    input wire clk2,
     input wire rst,
     inout wire[31:0] base_ram_data,
-    input wire uart_dataready,    //串口数据准备好
-    input wire uart_tbre,         //发送数据标志
-    input wire uart_tsre,         //数据发送完毕标志
+    input wire uart_dataready,    //串口数据准备�?
+    input wire uart_tbre,         //发�?�数据标�?
+    input wire uart_tsre,         //数据发�?�完毕标�?
     
-    output wire uart_rdn,         //读串口信号，低有效
-    output wire uart_wrn,         //写串口信号，低有效
+    output wire uart_rdn,         //读串口信号，低有�?
+    output wire uart_wrn,         //写串口信号，低有�?
     output wire[19:0] base_ram_addr,
     output wire[3:0] base_ram_be_n,
     output wire base_ram_ce_n,
@@ -117,7 +118,7 @@ module Core(
     );
     
     MEM mem0(
-        .clk(CLOCK_50), .rst(rst),.funct(funct_EX),.stop_MEMWB(stop_MEMWB),
+        .clk(CLOCK_50),.clk2(clk2), .rst(rst),.funct(funct_EX),.stop_MEMWB(stop_MEMWB),
         .MEMtoReg(MEMtoReg_EX),.Regwrite(Regwrite_EX),
         .MEMwrite(MEMwrite_EX),.MEMread(MEMread_EX),
         .store_data(store_data),.ALU_result(result),
