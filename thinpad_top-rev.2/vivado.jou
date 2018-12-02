@@ -2,81 +2,183 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sun Dec  2 11:29:10 2018
-# Process ID: 4308
+# Start of session at: Sun Dec  2 15:56:57 2018
+# Process ID: 17144
 # Current directory: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13276 C:\Users\blade\Desktop\Riscv-cpu\thinpad_top-rev.2\thinpad_top.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3868 C:\Users\blade\Desktop\Riscv-cpu\thinpad_top-rev.2\thinpad_top.xpr
 # Log file: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/vivado.log
 # Journal file: C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.xpr
 update_compile_order -fileset sources_1
-synth_design -rtl -name rtl_1
-synth_design -rtl -name rtl_1
-refresh_design
-refresh_design
-refresh_design
-refresh_design
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-refresh_design
-refresh_design
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-refresh_design
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
 launch_simulation
 source tb.tcl
 relaunch_sim
 relaunch_sim
-add_bp {C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sim_1/new/tb.sv} 179
 relaunch_sim
-run 10 ns
-relaunch_sim
-run 10 ns
-relaunch_sim
-run 10 ns
-add_bp {C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sim_1/new/tb.sv} 176
-remove_bps -file {C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sim_1/new/tb.sv} -line 179
-relaunch_sim
-run 10 ns
-relaunch_sim
-run 10 ns
-run 1000 ns
-relaunch_sim
-remove_bps -file {C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sim_1/new/tb.sv} -line 176
-run 1000 ns
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 1000 ns
-run 1000 ns
-run 1000 ns
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
+synth_design -rtl -name rtl_1
+synth_design -rtl -name rtl_1
 relaunch_sim
 relaunch_sim
 relaunch_sim
 relaunch_sim
 relaunch_sim
 relaunch_sim
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
+synth_design -rtl -name rtl_1
 close_sim
+launch_simulation
+source tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
 refresh_design
+refresh_design
+close_sim
+launch_simulation
+source tb.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+refresh_design
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+launch_simulation
+source tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+relaunch_sim
+refresh_design
+close_sim
+launch_simulation
+source tb.tcl
+run 1000 ns
+relaunch_sim
+relaunch_sim
+run 1000 ns
+run 1000 ns
+run 1000 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_sim

@@ -40,8 +40,8 @@ wire flash_we_n;         //Flash写使能信号，低有�?
 wire flash_byte_n;       //Flash 8bit模式选择，低有效。在使用flash�?16位模式时请设�?1
 
 //Windows�?要注意路径分隔符的转义，例如"D:\\foo\\bar.bin"
-parameter BASE_RAM_INIT_FILE = "/tmp/main.bin"; //BaseRAM初始化文件，请修改为实际的绝对路�?
-parameter EXT_RAM_INIT_FILE = "/tmp/eram.bin";    //ExtRAM初始化文件，请修改为实际的绝对路�?
+parameter BASE_RAM_INIT_FILE = "C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/eram.bin"; //BaseRAM初始化文件，请修改为实际的绝对路�?
+parameter EXT_RAM_INIT_FILE = "C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/eram.bin";    //ExtRAM初始化文件，请修改为实际的绝对路�?
 parameter FLASH_INIT_FILE = "/tmp/kernel.elf";    //Flash初始化文件，请修改为实际的绝对路�?
 
 assign rxd = 1'b1; //idle state
@@ -152,7 +152,7 @@ end
 initial begin 
     reg [31:0] tmp_array[0:1048575];
     integer n_File_ID, n_Init_Size;
-    n_File_ID = $fopen("C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/2.bin", "rb");
+    n_File_ID = $fopen(BASE_RAM_INIT_FILE, "rb");
     if(!n_File_ID)begin 
         n_Init_Size = 0;
         $display("Failed to open BaseRAM init file");
@@ -173,7 +173,7 @@ end
 initial begin 
     reg [31:0] tmp_array[0:1048575];
     integer n_File_ID, n_Init_Size;
-    n_File_ID = $fopen("C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/2.bin", "rb");
+    n_File_ID = $fopen(EXT_RAM_INIT_FILE, "rb");
     if(!n_File_ID)begin 
         n_Init_Size = 0;
         $display("Failed to open ExtRAM init file");

@@ -37,7 +37,6 @@ module MEM(
     input wire uart_dataready,    //串口数据准备好
     input wire uart_tbre,         //发送数据标志
     input wire uart_tsre,         //数据发送完毕标志
-    input wire stop_MEMWB,
 
     output wire uart_rdn,         //读串口信号，低有效
     output wire uart_wrn,         //写串口信号，低有效  
@@ -51,7 +50,8 @@ module MEM(
     output wire Regwrite_o,
     output wire[31:0] load_data_o,
     output wire[31:0] ALU_result_o,
-    output wire[4:0] rd_o
+    output wire[4:0] rd_o,
+    output wire[15:0] leds
 );
     reg[31:0] load_data;
     wire[31:0] memload;
@@ -67,11 +67,19 @@ module MEM(
             tcread <= MEMread;
             tcwrite <= MEMwrite;
         end else begin
-            base_ram_ce_n <= `Lowv;
-            memread <= MEMread;
-            memwrite <= MEMwrite; 
-            tcread <= `Falsev;
-            tcwrite <= `Falsev;
+            if (ALU_result == `PORTstatus) begin
+                base_ram_ce_n <= `Highv;
+                memread <= `Falsev;
+                memwrite <= `Falsev; 
+                tcread <= `Falsev;
+                tcwrite <= `Falsev;
+            end else begin
+                base_ram_ce_n <= `Lowv;
+                memread <= MEMread;
+                memwrite <= MEMwrite; 
+                tcread <= `Falsev;
+                tcwrite <= `Falsev;
+            end
         end
     end
  
@@ -95,6 +103,7 @@ module MEM(
     
     TC tc0(
         .clk(clk2),
+        .rst(rst),
         .SPC(SPC_i),
         .MEMwrite(tcwrite),
         .MEMread(tcread),
@@ -106,17 +115,22 @@ module MEM(
         .uart_wrn(uart_wrn),
         .uart_rdn(uart_rdn),
         .read_data(read_data[7:0]),
-        .SPC_o(SPC_o)
+        .SPC_o(SPC_o),
+        .leds(leds)
     );
     
     always @ (*) begin
-        load_data <= (SPC_i) ? { 24'h000000 ,read_data[7:0]} : memload;
+        if (ALU_result == `PORTstatus) begin
+            load_data <= {30'h0 , {uart_dataready,uart_tsre}};
+        end else begin
+            load_data <= (SPC_i) ? { 24'h000000 ,read_data[7:0]} : memload;
+        end
     end
     
     MEM_WB mw0(
         .clk(clk), .rst(rst),
         .MEMtoReg_i(MEMtoReg), .Regwrite_i(Regwrite),
-        .load_data_i(load_data),.ALU_result_i(ALU_result),.stop_MEMWB(stop_MEMWB),
+        .load_data_i(load_data),.ALU_result_i(ALU_result),.stop_MEMWB(SPC_o),
         .rd_i(rd_i),.MEMtoReg_o(MEMtoReg_o),
         .Regwrite_o(Regwrite_o),.load_data_o(load_data_o),
         .ALU_result_o(ALU_result_o),.rd_o(rd_o)

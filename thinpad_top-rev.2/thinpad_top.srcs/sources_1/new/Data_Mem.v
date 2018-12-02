@@ -78,7 +78,7 @@ module Data_Mem(
             //base_ram_we_n <= `Lowv;//写使能低
             base_ram_addr <= ac_addr[21:2];//赋地�?
             //下面确定 base_ram_be_n四位的�??
-            case(funct)
+            case(funct[2:0])
                 `OB : begin
                     base_ram_be_n <= {(~ac_addr[1])|(~ac_addr[0]), (~ac_addr[1])|(ac_addr[0]), (ac_addr[1])|(~ac_addr[0]), (ac_addr[1])|(ac_addr[0])};
                 end

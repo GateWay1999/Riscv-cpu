@@ -45,7 +45,6 @@ module Execute(
     output wire stop_pc,
     output wire stop_IFID,
     output wire clear_IDEX,
-    output wire stop_MEMWB,
     output wire SPC,
     output wire MEMread_o,
     output wire MEMwrite_o,
@@ -127,8 +126,6 @@ module Execute(
         .stop_pc(stop_pc),
         .stop_IFID(stop_IFID),
         .clear_IDEX(clear_IDEX),
-        .stop_EXMEM(stop_EXMEM),
-        .stop_MEMWB(stop_MEMWB),
         .SPC_o(SPC)
     );
     
@@ -138,7 +135,7 @@ module Execute(
     
     EX_MEM em0(
         .clk(clk), .rst(rst),
-        .result(result_o), .store_data(input_2),.funct(funct),.stop_EXMEM(stop_EXMEM),
+        .result(result_o), .store_data(input_2),.funct(funct),.stop_EXMEM(SPC_i),
         .rd(rd_i), .MEMwrite(MEMwrite_i),.MEMread(MEMread_i),.MEMtoReg(MEMtoReg_i),.Regwrite(Regwrite_i),
         .result_o(result), .store_data_o(store_data),.funct_o(funct_o),
         .rd_o(rd_o), .MEMwrite_o(MEMwrite_o),.MEMread_o(MEMread_o),.MEMtoReg_o(MEMtoReg_o),.Regwrite_o(Regwrite_o)
