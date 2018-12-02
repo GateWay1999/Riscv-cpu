@@ -29,6 +29,7 @@ module Core(
     input wire uart_tbre,         //发�?�数据标�?
     input wire uart_tsre,         //数据发�?�完毕标�?
     
+    output wire[15:0] leds,
     output wire uart_rdn,         //读串口信号，低有�?
     output wire uart_wrn,         //写串口信号，低有�?
     output wire[19:0] base_ram_addr,
@@ -77,7 +78,6 @@ module Core(
         // 输出
         .pc(pc), .inst_data(instruction)
     );
-    
     Decode dc0(
         .clk(CLOCK_50),.rst(rst),
         .pc(pc),.inst(instruction),
@@ -109,7 +109,6 @@ module Core(
         .stop_pc(stop_pc),
         .stop_IFID(stop_IFID),
         .clear_IDEX(clear_IDEX),
-        .stop_MEMWB(stop_MEMWB),
         .SPC(SPC_o),
         .MEMread_o(MEMread_EX),.MEMwrite_o(MEMwrite_EX),
         .MEMtoReg_o(MEMtoReg_EX),.Regwrite_o(Regwrite_EX),
@@ -117,8 +116,8 @@ module Core(
         .rd_o(rd_EX),.funct_o(funct_EX)
     );
     
-    MEM mem0(
-        .clk(CLOCK_50),.clk2(clk2), .rst(rst),.funct(funct_EX),.stop_MEMWB(stop_MEMWB),
+    MEM mek0(
+        .clk(CLOCK_50),.clk2(clk2), .rst(rst),.funct(funct_EX),
         .MEMtoReg(MEMtoReg_EX),.Regwrite(Regwrite_EX),
         .MEMwrite(MEMwrite_EX),.MEMread(MEMread_EX),
         .store_data(store_data),.ALU_result(result),
@@ -133,10 +132,9 @@ module Core(
         .uart_tsre(uart_tsre),
             
         .uart_rdn(uart_rdn),
-        .uart_wrn(uart_wrn),
-        .MEMtoReg_o(MEMtoReg_MEM),.Regwrite_o(Regwrite_MEM_WBtoID),
-        .load_data_o(load_data),.ALU_result_o(ALU_result),
-        .rd_o(write_reg),.SPC_o(SPC_i)
+        .uart_wrn(uart_wrn),.SPC_o(SPC_i),
+        .MEMtoReg_o(MEMtoReg_MEM),.Regwrite_o(Regwrite_MEM_WBtoID),.rd_o(write_reg),
+        .load_data_o(load_data),.ALU_result_o(ALU_result),.leds(leds)    
     );
     
     WB wb0(

@@ -79,17 +79,18 @@ module thinpad_top(
     output wire video_clk,         //像素时钟输出
     output wire video_de           //行数据有效信号，用于区分消隐�?
 );
-    reg rst;
-    initial begin
-        rst = 1'b1;
-        #50 rst= 1'b0;
-    end
     
     Core RV_CPU(
         .CLOCK_50(clk_11M0592),
-        .rst(rst),
+        .clk2(clk_11M0592),
+        .rst(reset_btn),
         .base_ram_data(base_ram_data),
-               
+        .uart_dataready(uart_dataready),
+        .uart_tbre(uart_tbre),
+        .uart_tsre(uart_tsre),
+        .uart_wrn(uart_wrn),
+        .uart_rdn(uart_rdn),
+        .leds(leds),    
         .base_ram_addr(base_ram_addr),
         .base_ram_be_n(base_ram_be_n),  
         .base_ram_ce_n(base_ram_ce_n),       

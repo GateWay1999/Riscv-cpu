@@ -31,8 +31,6 @@ module SCU(
     output reg stop_pc,
     output reg stop_IFID,
     output reg clear_IDEX,
-    output reg stop_EXMEM,
-    output reg stop_MEMWB,
     output reg SPC_o
 );
 
@@ -43,29 +41,21 @@ module SCU(
                 stop_pc <=  `Truev;
                 stop_IFID <= `Truev;
                 clear_IDEX <= `Truev;
-                stop_EXMEM <= `Truev;
-                stop_MEMWB <= `Truev;
             end else if (SPC_i == `Truev) begin
                 SPC_o <= `Truev;
                 stop_pc <=  `Truev;
                 stop_IFID <= `Truev;
                 clear_IDEX <= `Truev;
-                stop_EXMEM <= `Truev;
-                stop_MEMWB <= `Truev;
             end else begin
                 stop_pc <=  `Falsev;
                 stop_IFID <= `Falsev;
                 clear_IDEX <= `Falsev;
-                stop_EXMEM <= `Falsev;
-                stop_MEMWB <= `Falsev;
                 SPC_o <= `Falsev;
             end
         end else begin
             stop_pc <=  `Falsev;
             stop_IFID <= `Falsev;
             clear_IDEX <= `Falsev;
-            stop_EXMEM <= `Falsev;
-            stop_MEMWB <= `Falsev;
             SPC_o <= `Falsev;
         end
     end
