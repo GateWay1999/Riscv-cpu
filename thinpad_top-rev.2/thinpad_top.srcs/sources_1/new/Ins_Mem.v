@@ -21,13 +21,30 @@
 `include "define.v"
 
 module Ins_Mem(
-    input wire[`InstAddrBus]    addr,   //´«Èë¶ÁÈ¡µØÖ·
-    output wire[`InstBus]        inst    //Êı¾İÊä³ö
+    input wire[`InstAddrBus]    addr,   //ä¼ å…¥è¯»å–åœ°å€
+    output wire[`InstBus]        inst,    //æ•°æ®è¾“å‡º
+    inout wire[31:0] ext_ram_data,
+    output reg[19:0] ext_ram_addr,
+    output reg[3:0] ext_ram_be_n,
+    output reg ext_ram_ce_n,
+    output reg ext_ram_oe_n,
+    output reg ext_ram_we_n
 );
-    // ¶¨ÒåÖ¸Áî´æ´¢Æ÷´óĞ¡
-    reg[`InstBus] inst_mem[0:`InstMemNum-1];
-    // Ê¹ÓÃÎÄ¼ş³õÊ¼»¯Ö¸Áî´æ´¢Æ÷
-    initial $readmemh ("C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/inst_rom.data", inst_mem);
-    // ÒÀ¾İÊäÈëµØÖ·£¬Ìá¹©Êı¾İ
-    assign inst = inst_mem[addr[`InstMemNumLog2+1:2]]; 
+    // å®šä¹‰æŒ‡ä»¤å­˜å‚¨å™¨å¤§å°
+    //reg[`InstBus] inst_mem[0:`InstMemNum-1];
+    // ä½¿ç”¨æ–‡ä»¶åˆå§‹åŒ–æŒ‡ä»¤å­˜å‚¨å™¨
+    //initial $readmemh ("\\Mac\Home\Desktop\risc-v-biglao\test\data\alu.data", inst_mem);
+    // ä¾æ®è¾“å…¥åœ°å€ï¼Œæä¾›æ•°æ®
+    //assign inst = inst_mem[addr[`InstMemNumLog2+1:2]]; 
+
+
+    assign inst = ext_ram_data;
+    always @ (*) begin
+         ext_ram_ce_n <= `Lowv;//ç‰‡é€‰ä½
+         ext_ram_oe_n <= `Lowv;//è¯»ä½¿èƒ½ä½
+         ext_ram_we_n <= `Highv;//å†™ä½¿èƒ½é«˜
+         ext_ram_be_n <= 4'b0000;
+         ext_ram_addr <= addr[21:2];//èµ‹åœ°å€
+     end
+
 endmodule
