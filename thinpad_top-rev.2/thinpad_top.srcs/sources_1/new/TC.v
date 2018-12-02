@@ -31,20 +31,14 @@ module TC(
     inout wire[31:0] base_ram_data,            // 读串口
     input wire[7:0] send_data,
     output reg[7:0] read_data,
-    output wire base_ram_ce_n,               // 不能与内存同时控制
     output reg uart_wrn,
     output reg uart_rdn,
-    output wire base_ram_oe_n,
-    output wire base_ram_we_n,
     output reg SPC_o
 );
     reg[31:0] base_ram_o;
     assign base_ram_data = (MEMwrite) ? base_ram_o : 32'hZZZZZZZZ;
     reg[2:0] reading = `statu0;
     reg[2:0] writing = `statu0;
-    assign base_ram_ce_n = 1'b1;
-    assign base_ram_oe_n = 1'b1;
-    assign base_ram_we_n = 1'b1;
     always @ (posedge clk) begin
         if(SPC == `Truev) begin
             if(MEMread) begin                       // 接受

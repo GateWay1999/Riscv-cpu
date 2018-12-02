@@ -152,7 +152,7 @@ end
 initial begin 
     reg [31:0] tmp_array[0:1048575];
     integer n_File_ID, n_Init_Size;
-    n_File_ID = $fopen(BASE_RAM_INIT_FILE, "rb");
+    n_File_ID = $fopen("C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/2.bin", "rb");
     if(!n_File_ID)begin 
         n_Init_Size = 0;
         $display("Failed to open BaseRAM init file");
@@ -173,7 +173,7 @@ end
 initial begin 
     reg [31:0] tmp_array[0:1048575];
     integer n_File_ID, n_Init_Size;
-    n_File_ID = $fopen(EXT_RAM_INIT_FILE, "rb");
+    n_File_ID = $fopen("C:/Users/blade/Desktop/Riscv-cpu/thinpad_top-rev.2/thinpad_top.srcs/sources_1/new/2.bin", "rb");
     if(!n_File_ID)begin 
         n_Init_Size = 0;
         $display("Failed to open ExtRAM init file");

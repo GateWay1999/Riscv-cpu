@@ -87,7 +87,7 @@
 `define LBU             3'b011
 `define LHU             3'b100
 // 串行端口定义
-`define PORTaddr        20'hfffff
+`define PORTaddr        32'hBFD003FC
 // ״̬ת��
 `define statu0          3'b000
 `define statu1          3'b001

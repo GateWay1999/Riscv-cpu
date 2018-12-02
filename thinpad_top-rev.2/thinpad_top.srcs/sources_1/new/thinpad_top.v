@@ -87,7 +87,20 @@ module thinpad_top(
     
     Core RV_CPU(
         .CLOCK_50(clk_11M0592),
-        .rst(rst)
+        .rst(rst),
+        .base_ram_data(base_ram_data),
+               
+        .base_ram_addr(base_ram_addr),
+        .base_ram_be_n(base_ram_be_n),  
+        .base_ram_ce_n(base_ram_ce_n),       
+        .base_ram_oe_n(base_ram_oe_n),      
+        .base_ram_we_n(base_ram_we_n),
+        .ext_ram_data(ext_ram_data),
+        .ext_ram_addr(ext_ram_addr),
+        .ext_ram_be_n(ext_ram_be_n),
+        .ext_ram_ce_n(ext_ram_ce_n),
+        .ext_ram_oe_n(ext_ram_oe_n),
+        .ext_ram_we_n(ext_ram_we_n)
     );
 
 // 数码管连接关系示意图，dpy1同理

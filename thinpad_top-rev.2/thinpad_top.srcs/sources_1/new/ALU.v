@@ -27,7 +27,6 @@ module ALU(
     input wire[31:0] data_2,
     output reg[31:0] result
 );
-    integer addr;
     reg temp = 32'h11111111;
     always @ (*) begin
         if (rst == `RSToff) begin
@@ -64,9 +63,7 @@ module ALU(
                 end
                 `ALU_SHIFT_RA: begin
                     if  (data_1[31] == 1'b1)  begin
-                        result <= (data_1 >> data_2[4:0]);
-                        for (addr = 0; addr<data_2[4:0]; addr = addr + 1)
-                            result[31 - addr] <= 1;
+                        result <= ({32{data_1[31]}} << (6'd32 - {1'b0, data_2[4:0]})) | (data_1 >> data_2[4:0]);
                     end else begin
                         result <= (data_1 >> data_2[4:0]);
                     end

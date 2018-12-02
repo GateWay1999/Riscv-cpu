@@ -33,15 +33,44 @@ module RegFile(
 );
     // 定义32个寄存器
     reg[31:0] register[31:0];
-    integer addr;
     always @ (*) begin
-        if (rst == `RSTon) begin
-            for (addr = 0; addr <= 5'b11111; addr = addr + 1)
-                 register[addr] <= `SetZero;
-        end else begin
+        if (rst == `RSToff) begin
             if (Regwrite == `WriteEnable && rd != 5'b00000) begin
                 register[rd] <= write_data;
             end
+        end else begin
+            register[0] <= `SetZero;
+            register[1] <= `SetZero;
+            register[2] <= `SetZero;
+            register[3] <= `SetZero;
+            register[4] <= `SetZero;
+            register[5] <= `SetZero;
+            register[6] <= `SetZero;
+            register[7] <= `SetZero;
+            register[8] <= `SetZero;
+            register[9] <= `SetZero;
+            register[10] <= `SetZero;
+            register[11] <= `SetZero;
+            register[12] <= `SetZero;
+            register[13] <= `SetZero;
+            register[14] <= `SetZero;
+            register[15] <= `SetZero;
+            register[16] <= `SetZero;
+            register[17] <= `SetZero;
+            register[18] <= `SetZero;
+            register[19] <= `SetZero;
+            register[20] <= `SetZero;
+            register[21] <= `SetZero;
+            register[22] <= `SetZero;
+            register[23] <= `SetZero;
+            register[24] <= `SetZero;
+            register[25] <= `SetZero;
+            register[26] <= `SetZero; 
+            register[27] <= `SetZero; 
+            register[28] <= `SetZero;
+            register[29] <= `SetZero;
+            register[30] <= `SetZero;
+            register[31] <= `SetZero;
         end
     end
     // 读取rs1

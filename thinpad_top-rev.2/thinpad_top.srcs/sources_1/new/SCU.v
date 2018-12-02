@@ -38,7 +38,7 @@ module SCU(
 
     always @ (*) begin
         if (rst == `RSToff) begin
-            if (ALU_result[19:0] == `PORTaddr && funct[2:0] == 3'b000 && SPC_i == `Falsev) begin
+            if (ALU_result == `PORTaddr && funct[2:0] == 3'b000 && SPC_i == `Falsev && (MEMread || MEMwrite)) begin
                 SPC_o <= `Truev;
                 stop_pc <=  `Truev;
                 stop_IFID <= `Truev;
