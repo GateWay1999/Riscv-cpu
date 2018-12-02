@@ -45,30 +45,38 @@ module Data_Mem(
     output wire[31:0] load_data
 );
 
-    reg[31:0] temp_ram_data;
+    reg[31:0] temp_ram_data = 32'b00000000000000000000000000000000;
     reg is_write = `Falsev;
     
-    assign base_ram_data = (is_write == `Truev) ? temp_ram_data : 32'bz;
+    
+    
+    //assign base_ram_data = (is_write == `Truev) ? temp_ram_data : 32'bz;
+    assign base_ram_data[31:0] = (is_write == `Truev) ? store_data[31:0] : 32'bz;
     
     always @ (*) begin
-        if(MEMwrite == `Truev)
+        if(MEMwrite == `Truev) begin
             is_write <= `Truev;
-        else
+            
+        end
+        else begin
             is_write <= `Falsev;
+        end
     end
+    
+    
     
     always @ (*) begin
         if (MEMread == `Truev) begin //读
             base_ram_ce_n <= `Lowv;//片选低
             base_ram_oe_n <= `Lowv;//读使能低
-            base_ram_we_n <= `Highv;//写使能高
+            //base_ram_we_n <= `Highv;//写使能高
             base_ram_addr <= ac_addr[21:2];//赋地址
             base_ram_be_n <= 4'b0000;//REM字节使能四位都低
         end
         else if (MEMwrite == `Truev) begin //写
             base_ram_ce_n <= `Lowv;//片选低
             base_ram_oe_n <= `Highv;//读使能高
-            base_ram_we_n <= `Lowv;//写使能低
+            //base_ram_we_n <= `Lowv;//写使能低
             base_ram_addr <= ac_addr[21:2];//赋地址
             //下面确定 base_ram_be_n四位的值
             case(funct)
@@ -89,15 +97,19 @@ module Data_Mem(
         else begin //不读也不写，访存不工作 
              base_ram_ce_n <= `Highv;//片选高
              base_ram_oe_n <= `Highv;//读使能高
-             base_ram_we_n <= `Highv;//写使能高
+             //base_ram_we_n <= `Highv;//写使能高
         end
     end
      
-    always @ (negedge clk) begin //下降沿开始写
+    always @ (*) begin 
         if(MEMwrite == `Truev) begin //如果是写
-            //is_write <= `Truev;
-            temp_ram_data <= store_data;
+            //temp_ram_data <= store_data;
+            base_ram_we_n <= clk;//写使能看clk
         end
+        else begin
+            base_ram_we_n <= `Highv;
+        end
+        
     end
  
     always @ (*) begin //读
@@ -129,7 +141,7 @@ module Data_Mem(
                     end
                 end
                 `OW : begin
-                    //base_ram_addr = ac_addr[21:2];
+                    //base_ram_addr <= ac_addr[21:2];
                     load_data <= base_ram_data;
                 end
                 `LBU : begin
@@ -160,4 +172,5 @@ module Data_Mem(
         end
     end
     
+    //assign load_data = `SetZero + 1;
 endmodule

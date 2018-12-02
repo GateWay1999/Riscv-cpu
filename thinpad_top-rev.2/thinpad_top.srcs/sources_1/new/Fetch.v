@@ -21,15 +21,24 @@
 `include "define.v"
 
 module Fetch(
-    input wire clk,                             // CPU Ê±ÖÓ
-    input wire rst,                             // CPU ¸´Î»
-    input wire pc_write_i,                      // PC Ğ´¿ØÖÆ
-    input wire pc_select_i,                     // PC+4 ·ÖÖ§Ñ¡Ôñ
-    input wire[`InstAddrBus] pc_branch_i,       // Ìø×ªµØÖ·
-    input wire if_flush,                        // Çå³ıIFID
-    input wire ifid_write,                      // IFID Ğ´¿ØÖÆ
-    input wire stop_pc,                         // PC Ğ´¿ØÖÆ
-    input wire stop_IFID,                       // IFID Ğ´¿ØÖÆ
+    input wire clk,                             // CPU æ—¶é’Ÿ
+    input wire rst,                             // CPU å¤ä½
+    input wire pc_write_i,                      // PC å†™æ§åˆ¶
+    input wire pc_select_i,                     // PC+4 åˆ†æ”¯é€‰æ‹©
+    input wire[`InstAddrBus] pc_branch_i,       // è·³è½¬åœ°å€
+    input wire if_flush,                        // æ¸…é™¤IFID
+    input wire ifid_write,                      // IFID å†™æ§åˆ¶
+    input wire stop_pc,                         // PC å†™æ§åˆ¶
+    input wire stop_IFID,                       // IFID å†™æ§åˆ¶
+    
+    
+    inout wire[31:0] ext_ram_data,
+    output wire[19:0] ext_ram_addr,
+    output wire[3:0] ext_ram_be_n,
+    output wire ext_ram_ce_n,
+    output wire ext_ram_oe_n,
+    output wire ext_ram_we_n,
+    
     
     output wire[`InstAddrBus] pc,
     output wire[`InstBus] inst_data
@@ -44,7 +53,9 @@ module Fetch(
     );
     
     Ins_Mem im0(
-        .addr(pc_o), .inst(inst_data_o)
+        .addr(pc_o), .inst(inst_data_o), .ext_ram_data(ext_ram_data),
+            .ext_ram_addr(ext_ram_addr), .ext_ram_be_n(ext_ram_be_n), .ext_ram_ce_n(ext_ram_ce_n),
+            .ext_ram_oe_n(ext_ram_oe_n), .ext_ram_we_n(ext_ram_we_n)
     );
     
     IF_ID ifd0(
