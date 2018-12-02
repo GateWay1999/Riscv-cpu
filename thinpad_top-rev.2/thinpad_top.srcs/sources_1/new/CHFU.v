@@ -34,7 +34,8 @@ module CHFU(
 
     output reg          rs1_change,
     output reg          rs2_change,
-    output reg[31:0]    change_data
+    output reg[31:0]    change1_data,
+    output reg[31:0]    change2_data
 );
 
     always @ (*) begin
@@ -42,31 +43,35 @@ module CHFU(
             if (inst[1:0] == 2'b11) begin
                 if  (Regwrite_MEM && (rd_MEM != 5'b00000) && (rd_MEM == rs1)) begin
                     rs1_change <= `Truev;
-                    change_data <= ALU_result;
+                    change1_data <= ALU_result;
                 end else if (Regwrite_WB && (rd_WB != 5'b00000) && !(Regwrite_MEM && (rd_MEM != 5'b00000) && (rd_MEM == rs1)) && (rd_WB == rs1)) begin
                     rs1_change <= `Truev;
-                    change_data <= write_data;
+                    change1_data <= write_data;
                 end else begin
                     rs1_change <= `Falsev;
+                    change1_data <= `SetZero;
                 end
                 if (Regwrite_MEM && (rd_MEM != 5'b00000) && (rd_MEM == rs2)) begin
                     rs2_change <= `Truev;
-                    change_data <= ALU_result;
+                    change2_data <= ALU_result;
                 end else if (Regwrite_WB && (rd_WB != 5'b00000) && !(Regwrite_MEM && (rd_MEM != 5'b00000) && (rd_MEM == rs2)) && (rd_WB == rs2)) begin
                     rs2_change <= `Truev;
-                    change_data <= write_data;
+                    change2_data <= write_data;
                 end else begin
                     rs2_change <= `Falsev;
+                    change2_data <= `SetZero;
                 end
             end else begin
                 rs1_change <= `Falsev;
                 rs2_change <= `Falsev;
-                change_data <= `SetZero;
+                change1_data <= `SetZero;
+                change2_data <= `SetZero;
             end
         end else begin
             rs1_change <= `Falsev;
             rs2_change <= `Falsev;
-            change_data <= `SetZero;
+            change2_data <= `SetZero;
+            change1_data <= `SetZero;
         end
     end
 endmodule

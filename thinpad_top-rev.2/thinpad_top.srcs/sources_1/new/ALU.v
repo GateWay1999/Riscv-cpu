@@ -75,7 +75,7 @@ module ALU(
                     if (data_1[31] != data_2[31]) begin
                         result <= data_1[31] ? 32'h1 : 32'h0;
                     end else begin
-                        result <= (data_1 - data_2) ? 32'h1 : 32'h0;
+                        result <= (data_1 < data_2) ? 32'h1 : 32'h0;
                     end
                 end
                 `ALU_SLTU: begin
