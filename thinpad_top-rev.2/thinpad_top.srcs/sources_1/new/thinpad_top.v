@@ -79,7 +79,7 @@ module thinpad_top(
     output wire video_clk,         //像素时钟输出
     output wire video_de           //行数据有效信号，用于区分消隐�?
 );
-    
+
     Core RV_CPU(
         .CLOCK_50(clk_11M0592),
         .clk2(clk_11M0592),

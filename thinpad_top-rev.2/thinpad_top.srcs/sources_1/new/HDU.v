@@ -38,11 +38,11 @@ module HDU(
                 HDU_ct <= `Truev;
                 pc_write<= `WriteDisable;
                 if_id_write<= `WriteDisable;
-            end else if((MEMread_EXMEM == `Truev)&& ( inst[14:10] == 5'b11000 ) && ((rd == inst[4:0]) || (rd == inst[9:5]))) begin
+            end else if((MEMread_EXMEM == `Truev)&& ( inst[14:10] == 5'b11000 ||  inst[14:10] == 5'b11001) && ((rd == inst[4:0]) || (rd == inst[9:5]))) begin
                 HDU_ct <= `Truev;
                 pc_write<= `WriteDisable;
                 if_id_write<= `WriteDisable;
-            end else if((Regwrite_IDEX == `Truev)&& ( inst[14:10] == 5'b11000 ) && ((rd == inst[4:0]) || (rd == inst[9:5]))) begin
+            end else if((Regwrite_IDEX == `Truev)&& ( inst[14:10] == 5'b11000 ||  inst[14:10] == 5'b11001) && ((rd == inst[4:0]) || (rd == inst[9:5]))) begin
                 HDU_ct <= `Truev;
                 pc_write<= `WriteDisable;
                 if_id_write<= `WriteDisable;

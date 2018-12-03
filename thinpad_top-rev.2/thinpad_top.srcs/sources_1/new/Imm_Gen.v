@@ -22,6 +22,7 @@
 
 module Imm_Gen(
     input wire          rst,
+    input wire[31:0]    rs1,
     input wire[19:0]    imm_i,
     input wire[31:0]    pc_now,
     input wire[6:0]     inst,
@@ -35,7 +36,7 @@ module Imm_Gen(
         end else begin
             imm_o <= {{12{imm_i[19]}}, imm_i};
             if (inst[6:0] == 7'b1100111 ) begin
-                branch_pc <= (({{12{imm_i[19]}}, imm_i} << 1) + pc_now) & 32'hfffffffe;
+                branch_pc <= (({{12{imm_i[19]}}, imm_i} << 1) + rs1) & 32'hfffffffe;
             end else begin
                 branch_pc <= ({{12{imm_i[19]}}, imm_i} << 1) + pc_now;
             end
