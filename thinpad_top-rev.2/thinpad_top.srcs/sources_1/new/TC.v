@@ -73,7 +73,6 @@ module TC(
                         end
                     endcase
                 end else if (MEMwrite) begin            // ·¢ËÍ
-                    leds <= 16'h0111;
                     uart_rdn <= 1'b1;
                     case (writing)
                         `statu0: begin
@@ -116,6 +115,7 @@ module TC(
             uart_rdn <= 1'b1;
             SPC_o <= `Falsev;
             read_data <= 8'h00;
+            leds <= 16'h0111;
         end
     end 
 endmodule

@@ -89,12 +89,7 @@ module Decode(
         .write_data(write_data), .read_1(read1),
         .read_2(read2) 
     );
-    
-    Imm_Gen ig0(
-        .rst(rst), .imm_i(imm),.inst(inst[6:0]),
-        .pc_now(pc), .imm_o(imm_num_o),
-        .branch_pc(branch_pc)
-    );
+
     wire rs1_c,rs2_c;
     wire[31:0] change1,change2;
     CHFU chf0(
@@ -112,6 +107,12 @@ module Decode(
         read_f1 <= (rs1_c) ? change1 : read1;
         read_f2 <= (rs2_c) ? change2 : read2;
     end
+    
+    Imm_Gen ig0(
+        .rst(rst), .imm_i(imm),.inst(inst[6:0]),.rs1(read_f1),
+        .pc_now(pc), .imm_o(imm_num_o),
+        .branch_pc(branch_pc)
+    );
     
     Compare comp0(
         .rst(rst),
