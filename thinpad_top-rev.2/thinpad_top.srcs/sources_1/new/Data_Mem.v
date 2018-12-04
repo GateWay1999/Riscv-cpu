@@ -1,38 +1,20 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2018/11/28 21:56:50
-// Design Name: 
-// Module Name: Data_Mem
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+
 `include "define.v"
 
 module Data_Mem(
     input wire clk,
     input wire rst,
-    input wire[31:0] ac_addr,               // 32位要访问的地�?
-    input wire[31:0] store_data,            //  32位要存储的数�?
-    input wire MEMwrite,                    // 写使�?
-    input wire MEMread,                     // 读使�?
-    /* funct �? [2:0] 用来分辨访问方式
-        OB      3'b000      读取或存�? 8�?  读取的话做符号扩展到32�?  存入不用扩展直接存入对应位数
-        OH      3'b001      读取或存�? 16�? 读取的话做符号扩展到32�?  存入不用扩展直接存入对应位数
-        OW      3'b010      读取或存�? 32�? 存入不用扩展直接存入对应位数
-        LBU     3'b011      读取 �?个字�? 做零扩展�?32�?
-        LHU     3'b100      读取 两个字节 做零扩展�?32�?
+    input wire[31:0] ac_addr,              
+    input wire[31:0] store_data,            
+    input wire MEMwrite,                    
+    input wire MEMread,                     
+    /* 
+        OB      3'b000      
+        OH      3'b001      
+        OW      3'b010      
+        LBU     3'b011      
+        LHU     3'b100 
     */
     input wire[4:0] funct,
     inout wire[31:0] base_ram_data,
@@ -44,92 +26,34 @@ module Data_Mem(
     output reg [31:0] load_data
 );
 
-    reg[31:0] temp_ram_data = 32'b00000000000000000000000000000000;
-    reg is_write = `Falsev;
-    
-    
-    
-    //assign base_ram_data = (is_write == `Truev) ? temp_ram_data : 32'bz;
-    assign base_ram_data[31:0] = (is_write == `Truev) ? store_data[31:0] : 32'bz;
+    reg[31:0] temp_ram_data = 32'hzzzzzzzz;
+      
+    assign base_ram_data[31:0] = (MEMwrite == `Truev) ? temp_ram_data : 32'hzzzzzzzz;
     
     always @ (*) begin
-        if(MEMwrite == `Truev) begin
-            is_write <= `Truev;
-            
-        end
-        else begin
-            is_write <= `Falsev;
-        end
-    end
-    
-    
-    
-    always @ (*) begin
-        if (MEMread == `Truev) begin //�?
-            //base_ram_ce_n <= `Lowv;//片�?�低
-            base_ram_oe_n <= `Lowv;//读使能低
-            //base_ram_we_n <= `Highv;//写使能高
-            base_ram_addr <= ac_addr[21:2];//赋地�?
-            base_ram_be_n <= 4'b0000;//REM字节使能四位都低
-        end
-        else if (MEMwrite == `Truev) begin //�?
-            //base_ram_ce_n <= `Lowv;//片�?�低
-            base_ram_oe_n <= `Highv;//读使能高
-            //base_ram_we_n <= `Lowv;//写使能低
-            base_ram_addr <= ac_addr[21:2];//赋地�?
-            //下面确定 base_ram_be_n四位的�??
+        if (MEMread == `Truev) begin //读
+            base_ram_oe_n <= `Lowv;//读使能置低
+            base_ram_we_n <= `Highv;//写使能置高
+            base_ram_addr <= ac_addr[21:2];//赋地址
+            base_ram_be_n <= 4'b0000;//字节使能全部置低
+            temp_ram_data <= 32'hzzzzzzzz;//写寄存器置高阻态
+            //读取总线上的数据
             case(funct[2:0])
-                `OB : begin
-                    base_ram_be_n <= {(~ac_addr[1])|(~ac_addr[0]), (~ac_addr[1])|(ac_addr[0]), (ac_addr[1])|(~ac_addr[0]), (ac_addr[1])|(ac_addr[0])};
-                end
-                `OH : begin
-                    base_ram_be_n <= {(~ac_addr[1]), (~ac_addr[1]),(ac_addr[1]),(ac_addr[1])};
-                end
-                `OW : begin
-                    base_ram_be_n <= 4'b0000;
-                end
-                default : begin 
-                    base_ram_be_n <= 4'b1111;
-                end
-            endcase
-        end
-        else begin //不读也不写，访存不工�? 
-             //base_ram_ce_n <= `Highv;//片�?�高
-             base_ram_oe_n <= `Highv;//读使能高
-             //base_ram_we_n <= `Highv;//写使能高
-        end
-    end
-     
-    always @ (*) begin 
-        if(MEMwrite == `Truev) begin //如果是写
-            //temp_ram_data <= store_data;
-            base_ram_we_n <= clk;//写使能看clk
-        end
-        else begin
-            base_ram_we_n <= `Highv;
-        end
-        
-    end
- 
-    always @ (*) begin //�?
-        if(MEMread == `Truev) begin
-            //is_write <= `Falsev;
-            case(funct)
                 `OB : begin
                     case(ac_addr[1:0])
                         2'b00 : begin
                             load_data <= {{24{base_ram_data[7]}}, base_ram_data[7:0]};
                         end
                         2'b01: begin
-                            load_data <= {{24{base_ram_data[15]}}, base_ram_data[15:8]};
+                            load_data <= {{24{base_ram_data[15]}},base_ram_data[15:8]};
                         end
                         2'b10: begin
-                            load_data <= {{24{base_ram_data[23]}}, base_ram_data[23:16]};
+                            load_data <= {{24{base_ram_data[23]}},base_ram_data[23:16]};
                         end
                         2'b11: begin
-                            load_data <= {{24{base_ram_data[31]}}, base_ram_data[31:24]};
+                            load_data <= {{24{base_ram_data[31]}},base_ram_data[31:24]};
                         end
-                    endcase
+                    endcase                    
                 end
                 `OH : begin
                     if(ac_addr[1] == 1'b0) begin
@@ -140,7 +64,6 @@ module Data_Mem(
                     end
                 end
                 `OW : begin
-                    //base_ram_addr <= ac_addr[21:2];
                     load_data <= base_ram_data;
                 end
                 `LBU : begin
@@ -167,9 +90,45 @@ module Data_Mem(
                         load_data <= {16'b0, base_ram_data[31:16]};
                     end
                 end
+                default : begin
+                    load_data <= 32'hzzzzzzzz;
+                end
             endcase
+        end
+              
+        else if (MEMwrite == `Truev) begin //写
+            base_ram_oe_n <= `Highv;//读使能置高
+            base_ram_we_n <= clk;//写使能置为时钟信号
+            base_ram_addr <= ac_addr[21:2];//赋地址
+            load_data <= 32'hzzzzzzzz;//读寄存器置高阻态
+            //下面确定字节使能并传入写入数据
+            case(funct[2:0])
+                `OB : begin
+                    base_ram_be_n <= {(~ac_addr[1])|(~ac_addr[0]), (~ac_addr[1])|(ac_addr[0]), (ac_addr[1])|(~ac_addr[0]), (ac_addr[1])|(ac_addr[0])};
+                    temp_ram_data <= { base_ram_data[7:0],  base_ram_data[7:0],  base_ram_data[7:0], base_ram_data[7:0]};
+                end
+                `OH : begin
+                    base_ram_be_n <= {(~ac_addr[1]), (~ac_addr[1]),(ac_addr[1]),(ac_addr[1])};
+                    temp_ram_data <= { base_ram_data[15:0],  base_ram_data[15:0]};
+                end
+                `OW : begin
+                    base_ram_be_n <= 4'b0000;
+                    temp_ram_data <= store_data;
+                end
+                default : begin 
+                    base_ram_be_n <= 4'b1111;
+                    temp_ram_data <= 32'hzzzzzzzz;
+                end
+            endcase
+        end
+        
+        else begin //不读也不写
+             base_ram_oe_n <= `Highv;//读使能置高
+             base_ram_we_n <= `Highv;//写使能置高
+             base_ram_be_n <= 4'b1111;//字节使能置高
+             load_data <= 32'hzzzzzzzz;//读寄存器置高阻
+             temp_ram_data <= 32'hzzzzzzzz;//写寄存器置高阻
         end
     end
     
-    //assign load_data = `SetZero + 1;
 endmodule
